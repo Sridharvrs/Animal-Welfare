@@ -142,7 +142,7 @@
     <header class="hdr" id="hdr">
 
       <a class="logo" href="index.html" aria-label="Stackly — home">
-        <img src="./images/logo.webp" alt="Stackly">
+        <img src="images/logo.webp" alt="Stackly">
       </a>
       
       <nav class="nav" aria-label="Main navigation">
