@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volunteer — Stackly</title>
+<meta name="description" content="Walk dogs, socialise kittens, assist the vet team or lend your skills. Pick your shifts and apply to volunteer with Stackly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/volunteer.css">
+</head>
+<body data-page="volunteer">
+<script>document.documentElement.classList.remove('no-js')</script>
+<div id="site-header"></div>
+
+<main>
+  <!-- 1 · HERO : swinging ID badge -->
+  <section class="sec bg-sky v-hero" aria-label="Volunteer with Stackly">
+    <div class="wrap split">
+      <div>
+        <p class="tag rv"><i data-i="users"></i>Volunteer</p>
+        <h1 class="h1" data-split>Two hours of you can change a week for them.</h1>
+        <p class="lead rv" style="--d:.15s">Our 2,400 volunteers walk the dogs, cuddle the kittens, scrub the kennels and photograph the newcomers. No experience needed — just show up, and we’ll teach the rest.</p>
+        <div class="row-btns rv" style="--d:.25s">
+          <a class="btn btn-dark btn-lg" href="#shifts"><i data-i="calendar"></i>Pick your shifts</a>
+          <a class="btn btn-ghost btn-lg" href="#roles">Explore roles</a>
+        </div>
+        <ul class="v-stats rv" style="--d:.35s">
+          <li><b data-count="2400" data-suffix="+">0</b><span>active volunteers</span></li>
+          <li><b data-count="38000" data-suffix="+">0</b><span>hours given in 2026</span></li>
+          <li><b data-count="4">0</b><span>hours to your first shift</span></li>
+        </ul>
+      </div>
+
+      <div class="badge-stage" aria-hidden="true">
+        <span class="sticker s1"><i data-i="heart"></i>Walks &amp; cuddles</span>
+        <span class="sticker s2"><i data-i="check"></i>Vaccinated? Yes!</span>
+        <span class="sticker s3"><i data-i="paw"></i>Tail wags: 100%</span>
+        <div class="lanyard" id="lanyard">
+          <span class="strap"></span><span class="clip"></span>
+          <div class="badge">
+            <i class="hole"></i>
+            <div class="b-top"><i data-i="paw"></i>Stackly · Volunteer</div>
+            <div class="b-photo"><img src="images/person4.webp" alt=""></div>
+            <div class="b-name">Your name here</div>
+            <div class="b-role"><span id="bRole">Dog walker</span></div>
+            <div class="b-bar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="marq tape" aria-hidden="true">
+      <div class="marq-track">
+        <span>Dog walking</span><i data-i="paw"></i><span>Cat socialising</span><i data-i="paw"></i><span>Feeding rounds</span><i data-i="paw"></i><span>Vet assistance</span><i data-i="paw"></i><span>Adoption photography</span><i data-i="paw"></i><span>Rescue transport</span><i data-i="paw"></i><span>Fundraising</span><i data-i="paw"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · ROLES : flip cards -->
+  <section class="sec bg-sky" id="roles">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="tag"><i data-i="sparkle"></i>Find your fit</p>
+        <h2 class="h2">Six ways to help. Flip a card to see what it involves.</h2>
+        <p class="lead muted">Hover on desktop or tap on mobile. When a role feels right, press “Apply for this role” on the back.</p>
+      </div>
+      <div class="grid g3 roles">
+        <article class="fc rv" tabindex="0" data-role="Dog walker" aria-label="Dog walker role. Press Enter to flip.">
+          <div class="fc-in">
+            <div class="v-card face front"><span class="r-ic"><i data-i="paw"></i></span><h3 class="h3">Dog walker</h3><p>Give shelter dogs the daily walk and play they crave.</p><span class="meta"><i data-i="clock"></i>2 hrs · mornings</span><span class="hint">Flip <i data-i="arrow"></i></span></div>
+            <div class="v-card face back"><h3 class="h3">What you’ll do</h3><ul><li><i data-i="check"></i>Leash-walk 2–3 dogs a shift</li><li><i data-i="check"></i>Log behaviour notes</li><li><i data-i="check"></i>Help with basic training</li></ul><button type="button" class="btn btn-dark btn-sm" data-apply="Dog walker">Apply for this role</button></div>
+          </div>
+        </article>
+        <article class="fc rv" tabindex="0" data-role="Cat socialiser" style="--d:.08s" aria-label="Cat socialiser role. Press Enter to flip.">
+          <div class="fc-in">
+            <div class="v-card face front"><span class="r-ic"><i data-i="heart"></i></span><h3 class="h3">Cat socialiser</h3><p>Sit, play and purr with cats and kittens who need human warmth.</p><span class="meta"><i data-i="clock"></i>2 hrs · afternoons</span><span class="hint">Flip <i data-i="arrow"></i></span></div>
+            <div class="v-card face back"><h3 class="h3">What you’ll do</h3><ul><li><i data-i="check"></i>Play &amp; groom in the cat rooms</li><li><i data-i="check"></i>Help shy cats gain trust</li><li><i data-i="check"></i>Clean litter stations</li></ul><button type="button" class="btn btn-dark btn-sm" data-apply="Cat socialiser">Apply for this role</button></div>
+          </div>
+        </article>
+        <article class="fc rv" tabindex="0" data-role="Kitchen &amp; feeding" style="--d:.16s" aria-label="Kitchen and feeding role. Press Enter to flip.">
+          <div class="fc-in">
+            <div class="v-card face front"><span class="r-ic"><i data-i="bowl"></i></span><h3 class="h3">Kitchen &amp; feeding</h3><p>Prepare and serve the meals that keep 600 animals healthy.</p><span class="meta"><i data-i="clock"></i>3 hrs · early mornings</span><span class="hint">Flip <i data-i="arrow"></i></span></div>
+            <div class="v-card face back"><h3 class="h3">What you’ll do</h3><ul><li><i data-i="check"></i>Portion diets from the chart</li><li><i data-i="check"></i>Serve and refill water</li><li><i data-i="check"></i>Report anyone who skips a meal</li></ul><button type="button" class="btn btn-dark btn-sm" data-apply="Kitchen &amp; feeding">Apply for this role</button></div>
+          </div>
+        </article>
+        <article class="fc rv" tabindex="0" data-role="Vet assistant" style="--d:.24s" aria-label="Vet assistant role. Press Enter to flip.">
+          <div class="fc-in">
+            <div class="v-card face front"><span class="r-ic"><i data-i="med"></i></span><h3 class="h3">Vet assistant</h3><p>Support our clinic team with recovery care and record-keeping.</p><span class="meta"><i data-i="clock"></i>4 hrs · weekdays</span><span class="hint">Flip <i data-i="arrow"></i></span></div>
+            <div class="v-card face back"><h3 class="h3">What you’ll do</h3><ul><li><i data-i="check"></i>Prepare recovery kennels</li><li><i data-i="check"></i>Comfort patients before checks</li><li><i data-i="check"></i>Update digital health cards</li></ul><button type="button" class="btn btn-dark btn-sm" data-apply="Vet assistant">Apply for this role</button></div>
+          </div>
+        </article>
+        <article class="fc rv" tabindex="0" data-role="Photographer" style="--d:.32s" aria-label="Photographer role. Press Enter to flip.">
+          <div class="fc-in">
+            <div class="v-card face front"><span class="r-ic"><i data-i="camera"></i></span><h3 class="h3">Adoption photographer</h3><p>Capture portraits that help every animal find a family faster.</p><span class="meta"><i data-i="clock"></i>3 hrs · weekends</span><span class="hint">Flip <i data-i="arrow"></i></span></div>
+            <div class="v-card face back"><h3 class="h3">What you’ll do</h3><ul><li><i data-i="check"></i>Shoot new arrivals in soft light</li><li><i data-i="check"></i>Edit and upload profiles</li><li><i data-i="check"></i>Film short “meet me” clips</li></ul><button type="button" class="btn btn-dark btn-sm" data-apply="Photographer">Apply for this role</button></div>
+          </div>
+        </article>
+        <article class="fc rv" tabindex="0" data-role="Rescue driver" style="--d:.4s" aria-label="Rescue driver role. Press Enter to flip.">
+          <div class="fc-in">
+            <div class="v-card face front"><span class="r-ic"><i data-i="truck"></i></span><h3 class="h3">Rescue driver</h3><p>Help our ambulance team reach injured animals and shuttle adopters.</p><span class="meta"><i data-i="clock"></i>On call · flexible</span><span class="hint">Flip <i data-i="arrow"></i></span></div>
+            <div class="v-card face back"><h3 class="h3">What you’ll do</h3><ul><li><i data-i="check"></i>Drive to pick-up locations</li><li><i data-i="check"></i>Transfer animals safely</li><li><i data-i="check"></i>Handle basic first aid</li></ul><button type="button" class="btn btn-dark btn-sm" data-apply="Rescue driver">Apply for this role</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · A DAY -->
+  <section class="sec bg-sky" id="day">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="tag"><i data-i="clock"></i>A Saturday at the shelter</p>
+        <h2 class="h2">What a shift really feels like.</h2>
+        <p class="lead muted">Choose a time to see what’s happening. It plays automatically, and stops when you take over.</p>
+      </div>
+      <div class="day rv">
+        <div class="day-tabs" id="dayTabs" role="tablist" aria-label="Times of day"></div>
+        <div class="v-card day-panel" id="dayPanel" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · ROSTER -->
+  <section class="sec bg-sky" id="shifts">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="tag"><i data-i="calendar"></i>Weekly roster</p>
+        <h2 class="h2">Tap the shifts that suit your week.</h2>
+        <p class="lead muted">Pick up to four slots. Numbers show how many spots are still open. Full shifts are greyed out.</p>
+      </div>
+      <div class="roster rv">
+        <div class="roster-scroll">
+          <div class="grid-r" id="roster" role="group" aria-label="Weekly shift picker"></div>
+        </div>
+        <div class="roster-foot v-card">
+          <div><p class="rf-lab">Your picks</p><div class="picks" id="picks"><span class="none">Nothing selected yet</span></div></div>
+          <div class="rf-hrs"><b id="hrs">0</b><small>hrs / week</small></div>
+          <button type="button" class="btn btn-primary" onclick="location.href='error.html'"><i data-i="arrow"></i>Continue to application</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · APPLY -->
+  <section class="sec bg-sky" id="apply">
+    <div class="wrap apply">
+      <div class="apply-l rv-l">
+        <p class="tag tag-sun"><i data-i="mail"></i>Apply</p>
+        <h2 class="h2">Tell us a little about you.</h2>
+        <p class="lead muted">It takes about three minutes. A coordinator will call within two days to book your orientation.</p>
+        <ol class="next">
+          <li><span>1</span><div><b>We review</b><small>Every application is read by a person, not a filter.</small></div></li>
+          <li><span>2</span><div><b>Orientation</b><small>A 90-minute walk-through of safety, handling and kindness.</small></div></li>
+          <li><span>3</span><div><b>First shift</b><small>Paired with a buddy volunteer — no one is thrown in alone.</small></div></li>
+        </ol>
+      </div>
+
+      <div class="v-card apply-card rv-r" id="applyCard">
+        <form id="vForm" novalidate>
+          <div class="row2">
+            <div class="field"><label for="vName">Full name</label><input class="input" id="vName" autocomplete="name" placeholder="Your name" oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')"><span class="err-msg">Please enter your full name.</span></div>
+            <div class="field"><label for="vMail">Email</label><input class="input" id="vMail" type="email" autocomplete="email" placeholder="you@example.com"><span class="err-msg">Enter a valid email address.</span></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="vPhone">Mobile</label><input class="input" id="vPhone" inputmode="tel" autocomplete="tel" placeholder="10-digit number" oninput="this.value=this.value.replace(/[^0-9]/g,'')"><span class="err-msg">Enter a valid 10-digit mobile number.</span></div>
+            <div class="field"><label for="vCity">City</label><select class="input" id="vCity"><option value="">Select your city</option><option>Salem</option><option>Coimbatore</option><option>Erode</option><option>Chennai</option><option>Madurai</option><option>Bengaluru</option><option>Other</option></select><span class="err-msg">Please choose a city.</span></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="vRole">Role you’re interested in</label><select class="input" id="vRole"><option value="">Choose a role</option><option>Dog walker</option><option>Cat socialiser</option><option>Kitchen &amp; feeding</option><option>Vet assistant</option><option>Photographer</option><option>Rescue driver</option><option>Not sure yet</option></select><span class="err-msg">Please choose a role.</span></div>
+            <div class="field"><label for="vComm">How often?</label><select class="input" id="vComm"><option>Weekly</option><option>Twice a month</option><option>Monthly</option><option>One-time event</option></select></div>
+          </div>
+          <div class="field"><label for="vAvail">Your selected shifts</label><input class="input" id="vAvail" readonly value="No shifts picked yet — choose from the roster above"></div>
+          <div class="field"><label for="vExp">Anything we should know? <small>(optional)</small></label><textarea class="input" id="vExp" rows="3" maxlength="400" placeholder="Experience with animals, skills, allergies, why you’d like to volunteer…"></textarea></div>
+          <label class="check"><input type="checkbox" id="vAge"><span class="bx"><i data-i="check"></i></span><span>I am 18 or older.</span></label>
+          <span class="err-msg" id="vAgeErr">Volunteers must be 18 or older.</span>
+          <label class="check"><input type="checkbox" id="vCode"><span class="bx"><i data-i="check"></i></span><span>I agree to follow the Stackly safety &amp; kindness code.</span></label>
+          <span class="err-msg" id="vCodeErr">Please accept the code to continue.</span>
+          <button class="btn btn-primary btn-lg" onclick="location.href='error.html'"><i data-i="paw"></i>Submit application</button>
+          
+
+        </form>
+        <div class="v-done" id="vDone" hidden>
+          <div class="done-ic"><i data-i="check"></i></div>
+          <h3 class="h2">Application received!</h3>
+          <p id="vDoneMsg"></p>
+          <div class="ref" id="vRef"></div>
+          <div class="row-btns center-btns"><button type="button" class="btn btn-dark" onclick="location.href='error.html'"><i data-i="calendar"></i>Add orientation to calendar</button><a class="btn btn-ghost" href="error.html">Meet the animals</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · GROUPS -->
+  <section class="sec bg-sky" id="groups">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <p class="tag"><i data-i="users"></i>Bring your people</p>
+        <h2 class="h2">Volunteering is better in a pack.</h2>
+        <p class="lead muted">We host teams, classes and professionals with tailored days that fit your calendar and your skills.</p>
+      </div>
+      <div class="grid g3">
+        <div class="v-card lift grp rv"><span class="r-ic"><i data-i="users"></i></span><h3 class="h3">Corporate team days</h3><p>Half-day or full-day sessions for 10–60 colleagues: enrichment builds, kennel makeovers and a shelter walk-through.</p><a href="error.html">Plan a team day →</a></div>
+        <div class="v-card lift grp rv" style="--d:.1s"><span class="r-ic"><i data-i="award"></i></span><h3 class="h3">Students &amp; NSS units</h3><p>Certified service hours for schools and colleges, with orientation, supervision and an impact letter.</p><a href="error.html">Bring your class →</a></div>
+        <div class="v-card lift grp rv" style="--d:.2s"><span class="r-ic"><i data-i="med"></i></span><h3 class="h3">Skilled professionals</h3><p>Vets, lawyers, designers, translators and marketers — a few hours of your expertise can unlock months of care.</p><a href="error.html">Offer your skills →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · VOICES + LEADERBOARD -->
+  <section class="sec bg-sky" id="voices">
+    <div class="wrap split">
+      <div class="v-card board rv-l">
+        <p class="tag"><i data-i="award"></i>This month’s top helpers</p>
+        <h3 class="h3">Hours given, September</h3>
+        <ul class="lb" id="lb"></ul>
+        <p class="lb-note">Every hour counts. Nobody is ranked by talent — only by showing up.</p>
+      </div>
+      <div class="voices rv-r">
+        <h2 class="h2">“I came for the puppies. I stayed for the people.”</h2>
+        <blockquote class="v-card q"><p>I walked in on a rainy Saturday expecting to feel useful. I left knowing every dog’s name and a whole new group of friends.</p><footer><img src="images/person2.webp" alt=""><span><b>Meera S.</b> · Cat socialiser, 2 years</span></footer></blockquote>
+        <blockquote class="v-card q"><p>As a photographer, my two hours a week helped Bruno get adopted in nine days. Best portfolio piece I’ve ever shot.</p><footer><img src="images/person1.webp" alt=""><span><b>Karthik M.</b> · Photographer, 1 year</span></footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · FAQ -->
+  <section class="sec bg-sky" id="vfaq">
+    <div class="wrap split faq-split">
+      <div class="rv-l">
+        <p class="tag"><i data-i="info"></i>Before you sign up</p>
+        <h2 class="h2">Good questions, honest answers.</h2>
+        <p class="lead muted">Not sure about something? Call <b>+91 90000 12345</b> and ask our volunteer coordinator.</p>
+      </div>
+      <div class="acc rv-r">
+        <div class="acc-item v-card open"><button class="acc-q" type="button" aria-expanded="true">Do I need experience with animals?<i data-i="plus"></i></button><div class="acc-a"><div><p>No. Orientation covers safe handling, reading body language and what to do if something feels wrong. You’ll shadow a buddy for your first shifts.</p></div></div></div>
+        <div class="acc-item v-card"><button class="acc-q" type="button" aria-expanded="false">What’s the minimum commitment?<i data-i="plus"></i></button><div class="acc-a"><div><p>We ask for one shift a month for three months, so animals get familiar faces. One-time event days are also welcome.</p></div></div></div>
+        <div class="acc-item v-card"><button class="acc-q" type="button" aria-expanded="false">Can teenagers volunteer?<i data-i="plus"></i></button><div class="acc-a"><div><p>Volunteers must be 18. Students aged 15–17 can join supervised group visits through school or NSS programmes.</p></div></div></div>
+        <div class="acc-item v-card"><button class="acc-q" type="button" aria-expanded="false">Are vaccinations required?<i data-i="plus"></i></button><div class="acc-a"><div><p>We recommend a tetanus shot and offer discounted pre-exposure rabies vaccines to volunteers who work directly with dogs.</p></div></div></div>
+        <div class="acc-item v-card"><button class="acc-q" type="button" aria-expanded="false">Can I foster an animal at home?<i data-i="plus"></i></button><div class="acc-a"><div><p>Yes! Choose “Not sure yet” in the form and mention fostering. We supply food, medicine and support for the whole stay.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · CTA -->
+  <section class="sec bg-sky v-cta">
+    <div class="wrap center">
+      <h2 class="h2 rv">Your first shift is closer than you think.</h2>
+      <p class="lead rv" style="--d:.1s;margin-inline:auto">Pick a slot, tell us about you, and we’ll handle the rest — leashes included.</p>
+      <div class="row-btns center-btns rv" style="--d:.2s">
+        <a class="btn btn-dark btn-lg" href="error.html"><i data-i="calendar"></i>Pick your shifts</a>
+        <a class="btn btn-ghost btn-lg" href="error.html">Donate instead</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="js/common.js"></script>
+<script src="js/volunteer.js"></script>
+</body>
+</html>

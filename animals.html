@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adopt a Companion — Stackly</title>
+<meta name="description" content="Browse rescued dogs, cats and rabbits waiting for a home. Find your match, fund an urgent surgery, or start the adoption journey with Stackly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/animals.css">
+</head>
+<body data-page="animals">
+<script>document.documentElement.classList.remove('no-js')</script>
+<div id="site-header"></div>
+
+<main>
+  <!-- 1 · HERO : clothesline of swaying polaroids -->
+  <section class="sec bg-lilac a-hero" aria-label="Adopt a companion">
+    <div class="wrap split">
+      <div>
+        <p class="tag rv"><i data-i="paw"></i>Adopt · Foster · Sponsor</p>
+        <h1 class="h1" data-split>Someone here has been waiting for you.</h1>
+        <p class="lead rv" style="--d:.15s">Every animal below has been rescued, vaccinated, sterilised and given a name. All that is missing is a sofa, a bowl and a person who says “come home.”</p>
+        <div class="row-btns rv" style="--d:.25s">
+          <a class="btn btn-dark btn-lg" href="error.html"><i data-i="search"></i>Browse companions</a>
+          <a class="btn btn-ghost btn-lg" href="error.html"><i data-i="sparkle"></i>Find my match</a>
+        </div>
+        <ul class="mini-stats rv" style="--d:.35s">
+          <li><b data-count="1860">0</b><span>homes found in 2026</span></li>
+          <li><b data-count="94" data-suffix="%">0</b><span>still with family after a year</span></li>
+          <li><b data-count="132">0</b><span>waiting right now</span></li>
+        </ul>
+      </div>
+
+      <div class="line" aria-hidden="true">
+        <svg class="rope r1" viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0 8 Q200 44 400 8" fill="none" stroke="#0B1F2A" stroke-width="3" stroke-linecap="round"/></svg>
+        <svg class="rope r2" viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0 8 Q200 44 400 8" fill="none" stroke="#0B1F2A" stroke-width="3" stroke-linecap="round"/></svg>
+        <figure class="pol p1" style="--r:-4deg;--dl:0s"><i class="peg"></i><div class="pol-img"><img src="images/pet2.webp" alt="Bruno, a rescued dog"></div><figcaption>Bruno · 2 yrs</figcaption></figure>
+        <figure class="pol p2" style="--r:3deg;--dl:-1.4s"><i class="peg"></i><div class="pol-img"><img src="images/pet3.webp" alt="Luna, a grey kitten"></div><figcaption>Luna · 4 months</figcaption></figure>
+        <figure class="pol p3" style="--r:2deg;--dl:-2.6s"><i class="peg"></i><div class="pol-img"><img src="images/pet7.webp" alt="Honey, a golden retriever"></div><figcaption>Honey · 5 yrs</figcaption></figure>
+        <figure class="pol p4" style="--r:-3deg;--dl:-.8s"><i class="peg"></i><div class="pol-img"><img src="images/pet8.webp" alt="Sultan, a green-eyed cat"></div><figcaption>Sultan · 3 yrs</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · BROWSE -->
+  <section class="sec bg-lilac" id="browse">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="tag"><i data-i="heart"></i>Meet the residents</p>
+        <h2 class="h2">Find a friend who fits your life.</h2>
+        <p class="lead muted">Filter by species, age or name. Tap the heart to save a favourite, or open a profile to request a visit.</p>
+      </div>
+
+      <div class="fbar rv" role="search">
+        <div class="fchips" id="fSpecies" role="group" aria-label="Species">
+          <button type="button" class="fc on" data-v="all">All</button>
+          <button type="button" class="fc" data-v="dog">Dogs</button>
+          <button type="button" class="fc" data-v="cat">Cats</button>
+          <button type="button" class="fc" data-v="rabbit">Rabbits</button>
+          <button type="button" class="fc fc-save" id="fSaved" aria-pressed="false"><i data-i="heart"></i>Saved <b id="savedN">0</b></button>
+        </div>
+        <div class="fctl">
+          <label class="sr" for="fSearch">Search animals</label>
+          <input class="input" id="fSearch" type="search" placeholder="Search name, breed, shelter…" autocomplete="off">
+          <label class="sr" for="fAge">Age</label>
+          <select class="input" id="fAge">
+            <option value="all">Any age</option>
+            <option value="baby">Baby (under 6 months)</option>
+            <option value="young">Young (6 months – 2 yrs)</option>
+            <option value="adult">Adult (2 – 7 yrs)</option>
+            <option value="senior">Senior (7+ yrs)</option>
+          </select>
+          <label class="sr" for="fSort">Sort</label>
+          <select class="input" id="fSort">
+            <option value="featured">Sort: Featured</option>
+            <option value="young">Youngest first</option>
+            <option value="old">Oldest first</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </div>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <div class="pets" id="pets"></div>
+      <div class="empty a-card" id="empty" hidden>
+        <i data-i="search"></i>
+        <h3 class="h3">No friends match that search — yet.</h3>
+        <p>Try a different age or species, or clear the filters to see everyone.</p>
+        <button class="btn btn-dark btn-sm" type="button" id="fReset">Clear filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · MATCH QUIZ -->
+  <section class="sec bg-lilac match" id="match">
+    <div class="wrap split">
+      <div class="rv-l">
+        <p class="tag"><i data-i="sparkle"></i>Match finder</p>
+        <h2 class="h2">Three questions. One wagging (or purring) suggestion.</h2>
+        <p class="lead muted">Tell us about your home, your pace and who you’re hoping to meet. We’ll compare it with every resident’s temperament and show the best fit.</p>
+        <ul class="tick">
+          <li><i data-i="check"></i>Takes under a minute</li>
+          <li><i data-i="check"></i>Nothing is stored or shared</li>
+          <li><i data-i="check"></i>Then book a free meet-and-greet</li>
+        </ul>
+      </div>
+      <div class="a-card quiz rv-r" aria-live="polite">
+        <div class="q-prog" aria-hidden="true"><span id="qbar"></span></div>
+        <div id="qbody"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · URGENT -->
+  <section class="sec bg-lilac urgent" id="urgent">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="tag"><span class="live"></span>Urgent · funding open</p>
+        <h2 class="h2">Some patients can’t wait for adoption day.</h2>
+        <p class="lead">These three need surgery or long treatment first. Every rupee goes straight to the vet bill and you’ll get photo updates from recovery.</p>
+      </div>
+      <div class="grid g3 cases">
+        <article class="a-card lift case rv" style="--d:0s" data-goal="38000" data-raised="27400">
+          <div class="case-ph"><img src="images/pet12.webp" alt="Kalu, an injured street dog resting"><span class="pet-badge hot">Surgery in 3 days</span></div>
+          <div class="case-top">
+            <div><h3 class="h3">Kalu’s broken leg</h3><p>Hit by a two-wheeler near the bus stand. Needs a steel plate and six weeks of rest.</p></div>
+            <div class="ring" role="img" aria-label="Funding progress"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="40"/><circle class="bar" cx="50" cy="50" r="40"/></svg><b class="pct">0%</b></div>
+          </div>
+          <p class="raised"><b class="r-now">₹27,400</b> raised of ₹38,000</p>
+          <div class="quick" role="group" aria-label="Sponsor Kalu">
+            <button type="button" class="btn btn-dark btn-sm" data-add="500">+ ₹500</button>
+            <button type="button" class="btn btn-dark btn-sm" data-add="1000">+ ₹1,000</button>
+            <a class="btn btn-ghost btn-sm" href="error.html">Other</a>
+          </div>
+        </article>
+        <article class="a-card lift case rv" style="--d:.12s" data-goal="12000" data-raised="4300">
+          <div class="case-ph"><img src="images/pet13.webp" alt="Mishti, a kitten with a bandaged eye"><span class="pet-badge hot">Treatment ongoing</span></div>
+          <div class="case-top">
+            <div><h3 class="h3">Mishti’s eye infection</h3><p>A three-month-old kitten found in a drain. Needs eye surgery and daily medication.</p></div>
+            <div class="ring" role="img" aria-label="Funding progress"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="40"/><circle class="bar" cx="50" cy="50" r="40"/></svg><b class="pct">0%</b></div>
+          </div>
+          <p class="raised"><b class="r-now">₹4,300</b> raised of ₹12,000</p>
+          <div class="quick" role="group" aria-label="Sponsor Mishti">
+            <button type="button" class="btn btn-dark btn-sm" data-add="500">+ ₹500</button>
+            <button type="button" class="btn btn-dark btn-sm" data-add="1000">+ ₹1,000</button>
+            <a class="btn btn-ghost btn-sm" href="error.html">Other</a>
+          </div>
+        </article>
+        <article class="a-card lift case rv" style="--d:.24s" data-goal="24000" data-raised="19800">
+          <div class="case-ph"><img src="images/pet14.webp" alt="Ranger, a senior dog with grey muzzle"><span class="pet-badge hot">Almost there</span></div>
+          <div class="case-top">
+            <div><h3 class="h3">Ranger’s heart care</h3><p>A gentle 10-year-old dropped at our gate. Heartworm treatment gives him years, not months.</p></div>
+            <div class="ring" role="img" aria-label="Funding progress"><svg viewBox="0 0 100 100"><circle class="trk" cx="50" cy="50" r="40"/><circle class="bar" cx="50" cy="50" r="40"/></svg><b class="pct">0%</b></div>
+          </div>
+          <p class="raised"><b class="r-now">₹19,800</b> raised of ₹24,000</p>
+          <div class="quick" role="group" aria-label="Sponsor Ranger">
+            <button type="button" class="btn btn-dark btn-sm" data-add="500">+ ₹500</button>
+            <button type="button" class="btn btn-dark btn-sm" data-add="1000">+ ₹1,000</button>
+            <a class="btn btn-ghost btn-sm" href="error.html">Other</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · JOURNEY : staircase of stamps -->
+  <section class="sec bg-lilac journey" id="journey">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <p class="tag"><i data-i="calendar"></i>The adoption passport</p>
+        <h2 class="h2">Five stamps between you and forever.</h2>
+        <p class="lead muted">No long forms, no judgement. We just want to make sure the match lasts.</p>
+      </div>
+      <ol class="steps">
+        <li class="a-card lift st" style="--k:0;--tilt:-2deg"><span class="stamp">1</span><h3 class="h3">Browse &amp; shortlist</h3><p>Save up to five favourites, or let the match finder narrow it down for you.</p></li>
+        <li class="a-card lift st" style="--k:1;--tilt:1.5deg;--sd:.12s"><span class="stamp">2</span><h3 class="h3">Meet &amp; greet</h3><p>Visit the shelter, walk the dog or sit with the cat. Take as long as you need.</p></li>
+        <li class="a-card lift st" style="--k:2;--tilt:-1.5deg;--sd:.24s"><span class="stamp">3</span><h3 class="h3">Friendly home chat</h3><p>A 20-minute call about your space, routine and family — never a checklist to fail.</p></li>
+        <li class="a-card lift st" style="--k:3;--tilt:2deg;--sd:.36s"><span class="stamp">4</span><h3 class="h3">Sign &amp; contribute</h3><p>Sign the adoption pledge and pay the small contribution that funds the next rescue.</p></li>
+        <li class="a-card lift st" style="--k:4;--tilt:-1deg;--sd:.48s"><span class="stamp">5</span><h3 class="h3">Take them home</h3><p>Leave with a starter kit, health card and a coordinator’s number for the first 30 days.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 6 · KIT -->
+  <section class="sec bg-lilac" id="kit">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="tag"><i data-i="gift"></i>Included with every adoption</p>
+        <h2 class="h2">The contribution covers more than you’d think.</h2>
+        <p class="lead muted">A small adoption contribution of ₹500–₹1,500 pays for everything below and helps rescue the next animal in line.</p>
+      </div>
+      <div class="grid g3">
+        <div class="a-card lift kit rv"><i data-i="shield"></i><h3 class="h3">Fully vaccinated</h3><p>Core vaccines, rabies shot and deworming, recorded in a printed health card.</p></div>
+        <div class="a-card lift kit rv" style="--d:.08s"><i data-i="med"></i><h3 class="h3">Sterilised</h3><p>Spay or neuter surgery is done before adoption, so there are no surprise vet bills.</p></div>
+        <div class="a-card lift kit rv" style="--d:.16s"><i data-i="pulse"></i><h3 class="h3">Health-checked</h3><p>A full vet exam plus tick, flea and skin treatment. Anything ongoing is explained clearly.</p></div>
+        <div class="a-card lift kit rv" style="--d:.24s"><i data-i="bowl"></i><h3 class="h3">Starter kit</h3><p>A week of the food they already eat, a collar or harness, a leash and a soft blanket.</p></div>
+        <div class="a-card lift kit rv" style="--d:.32s"><i data-i="phone"></i><h3 class="h3">30-day support line</h3><p>Call or message our behaviour coordinator any day. Settling in takes patience.</p></div>
+        <div class="a-card lift kit rv" style="--d:.4s"><i data-i="heart"></i><h3 class="h3">Return promise</h3><p>If it truly doesn’t work, they come back to us — never to the street.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · HAPPY TAILS -->
+  <section class="sec bg-lilac tails" id="tails">
+    <div class="wrap">
+      <div class="head-row rv">
+        <div class="sec-head" style="margin-bottom:0">
+          <p class="tag"><i data-i="star"></i>Happy tails</p>
+          <h2 class="h2">Where they are now.</h2>
+          <p class="lead muted">Postcards from families who said yes. Drag the strip or use the arrows.</p>
+        </div>
+        <div class="arrows">
+          <button type="button" class="arr" id="tPrev" aria-label="Previous stories"><i data-i="arrow" class="flip"></i></button>
+          <button type="button" class="arr" id="tNext" aria-label="Next stories"><i data-i="arrow"></i></button>
+        </div>
+      </div>
+      <div class="strip" id="strip" tabindex="0" aria-label="Adoption stories">
+        <article class="a-card tail"><div class="tail-ph"><img src="images/pet15.webp" alt="Rani the dog on a sofa"></div><h3 class="h3">Rani</h3><p class="who">Adopted by the Subramanian family, Salem</p><p>“She slept under the bed for a week. Now she owns the sofa and greets every guest like a long-lost cousin.”</p></article>
+        <article class="a-card tail"><div class="tail-ph"><img src="images/pet16.webp" alt="Tiger the kitten in a sunny window"></div><h3 class="h3">Tiger</h3><p class="who">Adopted by Divya, Coimbatore</p><p>“Found in a monsoon drain, weighed 300 grams. Today he weighs four kilos and supervises all my video calls.”</p></article>
+        <article class="a-card tail"><div class="tail-ph"><img src="images/pet17.webp" alt="Peanut the puppy in a garden"></div><h3 class="h3">Peanut</h3><p class="who">Adopted by Imran &amp; family, Erode</p><p>“The kids were nervous for exactly ten minutes. Now he has his own school-bag-shaped pillow.”</p></article>
+        <article class="a-card tail"><div class="tail-ph"><img src="images/pet18.webp" alt="Nila the cat looking out"></div><h3 class="h3">Nila</h3><p class="who">Adopted by Mr. Raghavan, Chennai</p><p>“At 78 I wanted quiet company. Nila is calm, opinionated and never late for breakfast.”</p></article>
+        <article class="a-card tail"><div class="tail-ph"><img src="images/pet19.webp" alt="Chotu the rabbit eating greens"></div><h3 class="h3">Chotu</h3><p class="who">Adopted by Sneha, Bengaluru</p><p>“I didn’t know rabbits binky. Now I know, and my flat has never been happier.”</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · FAQ -->
+  <section class="sec bg-lilac" id="faq">
+    <div class="wrap split faq-split">
+      <div class="rv-l">
+        <p class="tag"><i data-i="info"></i>Before you adopt</p>
+        <h2 class="h2">Questions people ask us most.</h2>
+        <p class="lead muted">Still curious? Call <b>+91 90000 12345</b> or drop into the shelter between 9 AM and 6 PM.</p>
+        <a class="btn btn-dark" href="error.html"><i data-i="users"></i>Foster instead</a>
+      </div>
+      <div class="acc rv-r">
+        <div class="acc-item a-card open"><button class="acc-q" type="button" aria-expanded="true">What does the adoption contribution cover?<i data-i="plus"></i></button><div class="acc-a"><div><p>Vaccines, sterilisation, microchip, health card and a starter kit. Contributions range from ₹500 to ₹1,500 depending on the animal’s medical history.</p></div></div></div>
+        <div class="acc-item a-card"><button class="acc-q" type="button" aria-expanded="false">Can I adopt if I live in a rented flat?<i data-i="plus"></i></button><div class="acc-a"><div><p>Yes. We’ll ask for your landlord’s consent and match you with pets who suit smaller spaces — many of our calm adults and cats thrive in apartments.</p></div></div></div>
+        <div class="acc-item a-card"><button class="acc-q" type="button" aria-expanded="false">How long does approval take?<i data-i="plus"></i></button><div class="acc-a"><div><p>Most families go from first visit to home-coming in three to five days. Puppies and kittens may need an extra vet check before they can leave.</p></div></div></div>
+        <div class="acc-item a-card"><button class="acc-q" type="button" aria-expanded="false">What if it doesn’t work out?<i data-i="plus"></i></button><div class="acc-a"><div><p>Call us within the 30-day support window and we’ll troubleshoot with you. If it still isn’t right, the animal returns to Stackly and we find another home.</p></div></div></div>
+        <div class="acc-item a-card"><button class="acc-q" type="button" aria-expanded="false">Can I sponsor an animal without adopting?<i data-i="plus"></i></button><div class="acc-a"><div><p>Absolutely. Sponsors cover food and care for a named animal and receive monthly photo updates. You can start from the urgent cases above or on the donate page.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · CTA -->
+  <section class="sec bg-lilac a-cta">
+    <div class="wrap split">
+      <div class="rv-l">
+        <h2 class="h2">Can’t adopt today? You can still change a life.</h2>
+        <p class="lead">A monthly gift of ₹500 keeps one shelter animal fed, vaccinated and loved until the right family walks in.</p>
+        <div class="row-btns">
+          <a class="btn btn-primary btn-lg" href="error.html"><i data-i="heart"></i>Become a guardian</a>
+          <a class="btn btn-dark btn-lg" href="error.html">Volunteer</a>
+        </div>
+      </div>
+      <figure class="cta-ph rv-r"><img src="images/pet10.webp" alt="A friendly rescued dog sitting outdoors"><span class="cta-seal"><i data-i="paw"></i></span></figure>
+    </div>
+  </section>
+</main>
+
+<!-- pet profile modal -->
+<div class="modal" id="petModal" role="dialog" aria-modal="true" aria-labelledby="mName" aria-hidden="true">
+  <div class="modal-box a-card">
+    <button class="x-btn" type="button" id="mClose" aria-label="Close profile"><i data-i="x"></i></button>
+    <div id="mBody"></div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="js/common.js"></script>
+<script src="js/animals.js"></script>
+</body>
+</html>

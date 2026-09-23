@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PawsHope — Volunteer Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/volunteer-dashboard.css" />
+</head>
+<body data-role="volunteer">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="logo-text">
+        <a class="logo" href="index.html" aria-label="Stackly — home">
+            <img src="images/logo.webp" alt="Stackly">
+        </a>
+      </div>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">&times;</button>
+    </div>
+
+    <div class="sidebar-user">
+      <div class="user-avatar avatarLetter">JK</div>
+      <div class="user-meta">
+        <strong class="profileName">Jamal Khan</strong>
+        <span>Active Volunteer &middot; 142 hrs</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <p class="nav-group">Hub</p>
+      <a href="#" class="nav-item active" data-module="dashboard">
+        <span class="nav-ico">&#9632;</span> Dashboard
+      </a>
+      <a href="#" class="nav-item" data-module="tasks">
+        <span class="nav-ico">&#9745;</span> My Tasks
+      </a>
+      <a href="#" class="nav-item" data-module="schedule">
+        <span class="nav-ico">&#128197;</span> Shift Schedule
+      </a>
+      <p class="nav-group">Community</p>
+      <a href="#" class="nav-item" data-module="animals">
+        <span class="nav-ico">&#128062;</span> Animal Care Log
+      </a>
+      <a href="#" class="nav-item" data-module="reports">
+        <span class="nav-ico">&#9998;</span> Reports &amp; Notes
+      </a>
+      <a href="#" class="nav-item" data-module="profile">
+        <span class="nav-ico">&#9673;</span> My Profile
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <a href="#" class="nav-item logout" id="logoutBtn">
+        <span class="nav-ico">&#8592;</span> Logout
+      </a>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="topbar-title" id="topbarTitle">Dashboard</div>
+      <div class="topbar-actions">
+        <button class="icon-btn" aria-label="Notifications">
+          <span class="bell">&#128276;</span>
+          <span class="badge-dot">5</span>
+        </button>
+        <div class="topbar-user">
+          <div class="user-avatar sm avatarLetter">JK</div>
+          <span class="tuname profileName">Jamal K.</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ===================== DASHBOARD ===================== -->
+      <section class="module active" id="m-dashboard">
+        <div class="greeting reveal">
+          <p class="greet-eyebrow">Good morning, <span class="profileName">volunteer</span></p>
+          <h1>Ready to make a difference today? &#128049;</h1>
+          <p class="greet-sub">You have 2 shifts scheduled this week and 3 animals in your care.</p>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-card reveal">
+            <div class="stat-ico teal">&#128338;</div>
+            <div class="stat-data">
+              <span class="stat-val" data-count="142" data-suffix=" hrs">0</span>
+              <span class="stat-label">Total Hours</span>
+            </div>
+            <span class="stat-trend up">&#9650; 8 hrs this week</span>
+          </div>
+          <div class="stat-card reveal d1">
+            <div class="stat-ico orange">&#128062;</div>
+            <div class="stat-data">
+              <span class="stat-val" data-count="3">0</span>
+              <span class="stat-label">Animals In Care</span>
+            </div>
+            <span class="stat-trend">2 dogs, 1 cat</span>
+          </div>
+          <div class="stat-card reveal d2">
+            <div class="stat-ico sun">&#9745;</div>
+            <div class="stat-data">
+              <span class="stat-val" data-count="28">0</span>
+              <span class="stat-label">Tasks Completed</span>
+            </div>
+            <span class="stat-trend up">&#9650; 5 this week</span>
+          </div>
+          <div class="stat-card reveal d3">
+            <div class="stat-ico amber">&#127942;</div>
+            <div class="stat-data">
+              <span class="stat-val">Level 4</span>
+              <span class="stat-label">Volunteer Rank</span>
+            </div>
+            <span class="stat-trend">Senior Caregiver</span>
+          </div>
+        </div>
+
+        <div class="dash-grid">
+          <!-- today's schedule -->
+          <div class="panel reveal">
+            <div class="panel-head">
+              <h2>Today's Schedule</h2>
+              <span class="pill">3 shifts</span>
+            </div>
+            <div class="schedule-list">
+              <div class="sched-item">
+                <span class="sched-time">08:00</span>
+                <div class="sched-body">
+                  <strong>Morning Feeding</strong>
+                  <p>Feed and water all shelter dogs &middot; Shelter A</p>
+                </div>
+                <span class="sched-status done">Done</span>
+              </div>
+              <div class="sched-item">
+                <span class="sched-time">11:00</span>
+                <div class="sched-body">
+                  <strong>Dog Walk &amp; Exercise</strong>
+                  <p>30-min walk for Bella, Rocky &amp; Max &middot; Park Route</p>
+                </div>
+                <span class="sched-status now">In Progress</span>
+              </div>
+              <div class="sched-item">
+                <span class="sched-time">15:00</span>
+                <div class="sched-body">
+                  <strong>Cat Enclosure Cleaning</strong>
+                  <p>Clean litter, refresh bedding &middot; Cat Room 2</p>
+                </div>
+                <span class="sched-status upcoming">Upcoming</span>
+              </div>
+              <div class="sched-item">
+                <span class="sched-time">17:30</span>
+                <div class="sched-body">
+                  <strong>Evening Medication</strong>
+                  <p>Administer meds to Rocky &middot; Vet Station</p>
+                </div>
+                <span class="sched-status upcoming">Upcoming</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- animals in care -->
+          <div class="panel reveal d1">
+            <div class="panel-head"><h2>Animals In My Care</h2></div>
+            <div class="care-list">
+              <div class="care-item">
+                <img src="https://images.pexels.com/photos/16652367/pexels-photo-16652367.jpeg?auto=compress&cs=tinysrgb&h=120&w=120" alt="Bella" />
+                <div class="care-info">
+                  <strong>Bella</strong>
+                  <span>Dog &middot; Recovery</span>
+                  <div class="care-tags"><span class="ctag">Fed</span><span class="ctag">Walked</span><span class="ctag pending">Meds</span></div>
+                </div>
+              </div>
+              <div class="care-item">
+                <img src="https://images.pexels.com/photos/12195421/pexels-photo-12195421.jpeg?auto=compress&cs=tinysrgb&h=120&w=120" alt="Rocky" />
+                <div class="care-info">
+                  <strong>Rocky</strong>
+                  <span>Dog &middot; Post-surgery</span>
+                  <div class="care-tags"><span class="ctag">Fed</span><span class="ctag pending">Walk</span><span class="ctag pending">Meds</span></div>
+                </div>
+              </div>
+              <div class="care-item">
+                <img src="https://images.pexels.com/photos/32623314/pexels-photo-32623314.jpeg?auto=compress&cs=tinysrgb&h=120&w=120" alt="Oliver" />
+                <div class="care-info">
+                  <strong>Oliver</strong>
+                  <span>Cat &middot; Healthy</span>
+                  <div class="care-tags"><span class="ctag">Fed</span><span class="ctag">Cleaned</span><span class="ctag">Play</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- weekly hours chart -->
+        <div class="panel reveal">
+          <div class="panel-head">
+            <h2>Weekly Volunteer Hours</h2>
+            <span class="pill">This week</span>
+          </div>
+          <div class="hours-chart">
+            <div class="hbar-row"><span class="hbar-day">Mon</span><div class="hbar-track"><span class="hbar-fill" style="--w:80%"></span></div><span class="hbar-val">6h</span></div>
+            <div class="hbar-row"><span class="hbar-day">Tue</span><div class="hbar-track"><span class="hbar-fill" style="--w:53%"></span></div><span class="hbar-val">4h</span></div>
+            <div class="hbar-row"><span class="hbar-day">Wed</span><div class="hbar-track"><span class="hbar-fill" style="--w:40%"></span></div><span class="hbar-val">3h</span></div>
+            <div class="hbar-row"><span class="hbar-day">Thu</span><div class="hbar-track"><span class="hbar-fill" style="--w:93%"></span></div><span class="hbar-val">7h</span></div>
+            <div class="hbar-row"><span class="hbar-day">Fri</span><div class="hbar-track"><span class="hbar-fill" style="--w:67%"></span></div><span class="hbar-val">5h</span></div>
+            <div class="hbar-row"><span class="hbar-day">Sat</span><div class="hbar-track"><span class="hbar-fill" style="--w:100%"></span></div><span class="hbar-val">8h</span></div>
+            <div class="hbar-row"><span class="hbar-day">Sun</span><div class="hbar-track"><span class="hbar-fill" style="--w:27%"></span></div><span class="hbar-val">2h</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TASKS ===================== -->
+      <section class="module" id="m-tasks">
+        <div class="greeting reveal">
+          <p class="greet-eyebrow">My Tasks</p>
+          <h1>Stay on top of your duties &#9745;</h1>
+          <p class="greet-sub">Complete tasks to earn hours and help animals in your care.</p>
+        </div>
+
+        <div class="task-filters reveal">
+          <button class="task-filter active" data-filter="all">All Tasks</button>
+          <button class="task-filter" data-filter="pending">Pending</button>
+          <button class="task-filter" data-filter="progress">In Progress</button>
+          <button class="task-filter" data-filter="done">Completed</button>
+        </div>
+
+        <div class="task-list" id="taskList">
+          <div class="task-item reveal" data-status="pending">
+            <label class="task-check"><input type="checkbox" /><span class="check-box"></span></label>
+            <div class="task-body">
+              <h3>Prepare special diet for Rocky</h3>
+              <p>Mix prescription food with supplements &middot; Due 12:00 PM today</p>
+              <span class="task-priority high">High Priority</span>
+            </div>
+            <span class="task-hours">+0.5h</span>
+          </div>
+          <div class="task-item reveal d1" data-status="progress">
+            <label class="task-check"><input type="checkbox" checked /><span class="check-box"></span></label>
+            <div class="task-body">
+              <h3>Dog walking session</h3>
+              <p>Walk Bella, Rocky &amp; Max for 30 minutes each &middot; In progress</p>
+              <span class="task-priority med">Medium</span>
+            </div>
+            <span class="task-hours">+1.5h</span>
+          </div>
+          <div class="task-item reveal d2" data-status="pending">
+            <label class="task-check"><input type="checkbox" /><span class="check-box"></span></label>
+            <div class="task-body">
+              <h3>Clean cat enclosures</h3>
+              <p>Litter boxes, bedding, water bowls &middot; Cat Room 2 &amp; 3</p>
+              <span class="task-priority med">Medium</span>
+            </div>
+            <span class="task-hours">+1.0h</span>
+          </div>
+          <div class="task-item reveal" data-status="done">
+            <label class="task-check"><input type="checkbox" checked /><span class="check-box"></span></label>
+            <div class="task-body">
+              <h3>Morning feeding round</h3>
+              <p>Feed and water all shelter animals &middot; Completed 08:30</p>
+              <span class="task-priority low">Routine</span>
+            </div>
+            <span class="task-hours">+1.0h</span>
+          </div>
+          <div class="task-item reveal d1" data-status="pending">
+            <label class="task-check"><input type="checkbox" /><span class="check-box"></span></label>
+            <div class="task-body">
+              <h3>Evening medication round</h3>
+              <p>Administer prescribed meds to Rocky &amp; Bella &middot; Vet Station</p>
+              <span class="task-priority high">High Priority</span>
+            </div>
+            <span class="task-hours">+0.5h</span>
+          </div>
+          <div class="task-item reveal d2" data-status="done">
+            <label class="task-check"><input type="checkbox" checked /><span class="check-box"></span></label>
+            <div class="task-body">
+              <h3>Grooming session — Oliver</h3>
+              <p>Brush, nail trim, ear clean &middot; Completed yesterday</p>
+              <span class="task-priority low">Routine</span>
+            </div>
+            <span class="task-hours">+1.0h</span>
+          </div>
+          <div class="task-item reveal" data-status="pending">
+            <label class="task-check"><input type="checkbox" /><span class="check-box"></span></label>
+            <div class="task-body">
+              <h3>Update adoption profiles</h3>
+              <p>Take new photos and write bios for 3 animals &middot; Due tomorrow</p>
+              <span class="task-priority med">Medium</span>
+            </div>
+            <span class="task-hours">+2.0h</span>
+          </div>
+        </div>
+
+        <div class="task-progress-bar reveal">
+          <div class="tpb-head"><strong>Today's Progress</strong><span>2 of 7 completed</span></div>
+          <div class="tpb-track"><span class="tpb-fill" style="--w:28%"></span></div>
+        </div>
+      </section>
+
+      <!-- ===================== SCHEDULE ===================== -->
+      <section class="module" id="m-schedule">
+        <div class="greeting reveal">
+          <p class="greet-eyebrow">Shift Schedule</p>
+          <h1>Your weekly calendar &#128197;</h1>
+          <p class="greet-sub">View and manage your upcoming volunteer shifts.</p>
+        </div>
+
+        <div class="calendar-grid reveal">
+          <div class="cal-day">
+            <div class="cal-head"><span>Mon</span><strong>22</strong></div>
+            <div class="cal-shifts">
+              <div class="cal-shift morning">08:00 Feeding</div>
+              <div class="cal-shift afternoon">14:00 Dog Walks</div>
+            </div>
+          </div>
+          <div class="cal-day today">
+            <div class="cal-head"><span>Tue</span><strong>23</strong></div>
+            <div class="cal-shifts">
+              <div class="cal-shift morning">08:00 Feeding</div>
+              <div class="cal-shift noon">11:00 Dog Walk</div>
+              <div class="cal-shift afternoon">15:00 Cat Cleaning</div>
+              <div class="cal-shift evening">17:30 Meds</div>
+            </div>
+            <span class="cal-today-tag">Today</span>
+          </div>
+          <div class="cal-day">
+            <div class="cal-head"><span>Wed</span><strong>24</strong></div>
+            <div class="cal-shifts">
+              <div class="cal-shift morning">08:00 Feeding</div>
+            </div>
+          </div>
+          <div class="cal-day">
+            <div class="cal-head"><span>Thu</span><strong>25</strong></div>
+            <div class="cal-shifts">
+              <div class="cal-shift morning">08:00 Feeding</div>
+              <div class="cal-shift afternoon">14:00 Grooming</div>
+              <div class="cal-shift evening">16:00 Admin</div>
+            </div>
+          </div>
+          <div class="cal-day">
+            <div class="cal-head"><span>Fri</span><strong>26</strong></div>
+            <div class="cal-shifts">
+              <div class="cal-shift morning">09:00 Vet Assist</div>
+            </div>
+          </div>
+          <div class="cal-day">
+            <div class="cal-head"><span>Sat</span><strong>27</strong></div>
+            <div class="cal-shifts">
+              <div class="cal-shift morning">08:00 Feeding</div>
+              <div class="cal-shift noon">11:00 Adoption Event</div>
+              <div class="cal-shift afternoon">14:00 Dog Walks</div>
+            </div>
+          </div>
+          <div class="cal-day off">
+            <div class="cal-head"><span>Sun</span><strong>28</strong></div>
+            <div class="cal-shifts"><span class="cal-off">Day Off</span></div>
+          </div>
+        </div>
+
+        <div class="sched-summary reveal">
+          <div class="ss-card"><strong>35h</strong><span>This Week</span></div>
+          <div class="ss-card"><strong>4</strong><span>Active Days</span></div>
+          <div class="ss-card"><strong>1</strong><span>Day Off</span></div>
+          <div class="ss-card"><strong>2</strong><span>Events</span></div>
+        </div>
+      </section>
+
+      <!-- ===================== ANIMAL CARE LOG ===================== -->
+      <section class="module" id="m-animals">
+        <div class="greeting reveal">
+          <p class="greet-eyebrow">Animal Care Log</p>
+          <h1>Track the animals you care for &#128062;</h1>
+          <p class="greet-sub">Log feeding, medication, behavior, and health observations.</p>
+        </div>
+
+        <div class="animal-log-grid">
+          <article class="animal-log-card reveal">
+            <img src="https://images.pexels.com/photos/16652367/pexels-photo-16652367.jpeg?auto=compress&cs=tinysrgb&h=200&w=350" alt="Bella" />
+            <div class="alc-body">
+              <div class="alc-head">
+                <h3>Bella</h3>
+                <span class="alc-status recovering">Recovering</span>
+              </div>
+              <div class="alc-details">
+                <div><span>Breed</span><strong>Mixed</strong></div>
+                <div><span>Age</span><strong>2 yrs</strong></div>
+                <div><span>Weight</span><strong>18 kg</strong></div>
+                <div><span>Last Fed</span><strong>08:15</strong></div>
+              </div>
+              <div class="alc-log">
+                <h4>Recent Log</h4>
+                <p>&#10003; Fed morning kibble + supplement</p>
+                <p>&#10003; Walked 30 min — energetic</p>
+                <p>&#9675; Medication due 17:30</p>
+              </div>
+              <button class="btn-card" onclick="location.href='dashboardError.html'">Update Log &#9998;</button>
+            </div>
+          </article>
+          <article class="animal-log-card reveal d1">
+            <img src="https://images.pexels.com/photos/12195421/pexels-photo-12195421.jpeg?auto=compress&cs=tinysrgb&h=200&w=350" alt="Rocky" />
+            <div class="alc-body">
+              <div class="alc-head">
+                <h3>Rocky</h3>
+                <span class="alc-status critical">Post-Surgery</span>
+              </div>
+              <div class="alc-details">
+                <div><span>Breed</span><strong>Shepherd</strong></div>
+                <div><span>Age</span><strong>3 yrs</strong></div>
+                <div><span>Weight</span><strong>25 kg</strong></div>
+                <div><span>Last Fed</span><strong>08:20</strong></div>
+              </div>
+              <div class="alc-log">
+                <h4>Recent Log</h4>
+                <p>&#10003; Fed soft prescription diet</p>
+                <p>&#9675; Short walk only — healing</p>
+                <p>&#9675; Pain meds due 17:00</p>
+              </div>
+              <button class="btn-card" onclick="location.href='dashboardError.html'">Update Log &#9998;</button>
+            </div>
+          </article>
+          <article class="animal-log-card reveal d2">
+            <img src="https://images.pexels.com/photos/32623314/pexels-photo-32623314.jpeg?auto=compress&cs=tinysrgb&h=200&w=350" alt="Oliver" />
+            <div class="alc-body">
+              <div class="alc-head">
+                <h3>Oliver</h3>
+                <span class="alc-status healthy">Healthy</span>
+              </div>
+              <div class="alc-details">
+                <div><span>Breed</span><strong>Ginger Tabby</strong></div>
+                <div><span>Age</span><strong>1 yr</strong></div>
+                <div><span>Weight</span><strong>4.5 kg</strong></div>
+                <div><span>Last Fed</span><strong>08:00</strong></div>
+              </div>
+              <div class="alc-log">
+                <h4>Recent Log</h4>
+                <p>&#10003; Fed wet + dry food</p>
+                <p>&#10003; Enclosure cleaned</p>
+                <p>&#10003; Play session 20 min</p>
+              </div>
+              <button class="btn-card" onclick="location.href='dashboardError.html'">Update Log &#9998;</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="panel reveal">
+          <div class="panel-head"><h2>Quick Log Entry</h2></div>
+          <div class="quick-log">
+            <select class="field-select">
+              <option>Bella</option><option>Rocky</option><option>Oliver</option>
+            </select>
+            <select class="field-select">
+              <option>Feeding</option><option>Medication</option><option>Walk</option><option>Grooming</option><option>Behavior Note</option>
+            </select>
+            <input type="text" class="field-input" placeholder="Notes (e.g. 'Ate full meal, energetic')" />
+            <button class="btn-primary" onclick="location.href='dashboardError.html'">Add Log Entry</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== REPORTS ===================== -->
+      <section class="module" id="m-reports">
+        <div class="greeting reveal">
+          <p class="greet-eyebrow">Reports &amp; Notes</p>
+          <h1>Document your observations &#9998;</h1>
+          <p class="greet-sub">Submit care reports and flag concerns to shelter coordinators.</p>
+        </div>
+
+        <div class="report-grid">
+          <div class="panel reveal">
+            <h2 class="panel-title">Submit New Report</h2>
+            <label class="field-label">Report Type</label>
+            <select class="field-select">
+              <option>Behavior Observation</option>
+              <option>Health Concern</option>
+              <option>Incident Report</option>
+              <option>Adoption Recommendation</option>
+              <option>General Note</option>
+            </select>
+            <label class="field-label">Animal</label>
+            <select class="field-select">
+              <option>Bella</option><option>Rocky</option><option>Oliver</option><option>General / Multiple</option>
+            </select>
+            <label class="field-label">Subject</label>
+            <input type="text" class="field-input" placeholder="Brief summary..." />
+            <label class="field-label">Details</label>
+            <textarea class="field-area" rows="5" placeholder="Describe what you observed..."></textarea>
+            <label class="field-label">Priority</label>
+            <div class="prio-row">
+              <button class="prio-btn" data-prio="low">Low</button>
+              <button class="prio-btn active" data-prio="med">Medium</button>
+              <button class="prio-btn" data-prio="high">High</button>
+            </div>
+            <button class="btn-primary" onclick="location.href='dashboardError.html'">Submit Report</button>
+          </div>
+
+          <div class="report-side reveal d1">
+            <div class="panel" style="margin-bottom:0;">
+              <h2 class="panel-title">Recent Reports</h2>
+              <div class="report-list">
+                <div class="report-item">
+                  <span class="report-type behavior">Behavior</span>
+                  <div><strong>Bella showing anxiety</strong><p>Noticed pacing during thunderstorm. May need calming aids.</p></div>
+                  <span class="report-date">Sep 21</span>
+                </div>
+                <div class="report-item">
+                  <span class="report-type health">Health</span>
+                  <div><strong>Rocky incision healing well</strong><p>No redness or swelling at surgical site. On track.</p></div>
+                  <span class="report-date">Sep 20</span>
+                </div>
+                <div class="report-item">
+                  <span class="report-type adoption">Adoption</span>
+                  <div><strong>Oliver ready for adoption</strong><p>Healthy, socialized, vaccinations complete. Recommend listing.</p></div>
+                  <span class="report-date">Sep 18</span>
+                </div>
+                <div class="report-item">
+                  <span class="report-type incident">Incident</span>
+                  <div><strong>Gate latch needs repair</strong><p>Enclosure 3 gate latch loose. Reported to maintenance.</p></div>
+                  <span class="report-date">Sep 15</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PROFILE ===================== -->
+      <section class="module" id="m-profile">
+        <div class="greeting reveal">
+          <p class="greet-eyebrow">My Profile</p>
+          <h1>Your volunteer journey &#9673;</h1>
+          <p class="greet-sub">Track your progress, update details, and manage certifications.</p>
+        </div>
+
+        <div class="profile-layout">
+          <div class="profile-card reveal">
+            <div class="profile-avatar avatarLetter">JK</div>
+            <h3 class="profileName">Jamal Khan</h3>
+            <span class="profile-role">Level 4 &middot; Senior Caregiver</span>
+            <div class="profile-stats">
+              <div><strong>142h</strong><span>Hours</span></div>
+              <div><strong>86</strong><span>Tasks</span></div>
+              <div><strong>24</strong><span>Animals</span></div>
+            </div>
+            <div class="level-bar">
+              <div class="level-track"><span style="width:72%"></span></div>
+              <span class="level-text">28 hrs to Level 5</span>
+            </div>
+          </div>
+
+          <div class="panel reveal d1">
+            <h2 class="panel-title">Personal Information</h2>
+            <div class="form-grid">
+              <div><label>First Name</label><input type="text" value="Jamal" class="field-input" /></div>
+              <div><label>Last Name</label><input type="text" value="Khan" class="field-input" /></div>
+              <div><label>Email</label><input type="email" value="jamal.khan@email.com" class="field-input" /></div>
+              <div><label>Phone</label><input type="tel" value="+1 (555) 987-6543" class="field-input" /></div>
+              <div><label>Shelter</label><input type="text" value="Greenville Animal Shelter" class="field-input" /></div>
+              <div><label>Role</label><input type="text" value="Senior Caregiver" class="field-input" /></div>
+            </div>
+            <button class="btn-primary" onclick="location.href='dashboardError.html'">Save Changes</button>
+          </div>
+
+          <div class="panel reveal d2">
+            <h2 class="panel-title">Certifications</h2>
+            <div class="cert-list">
+              <div class="cert-item"><span class="cert-ico">&#10003;</span><div><strong>Animal First Aid</strong><small>Issued Jan 2026 &middot; Valid 2 yrs</small></div></div>
+              <div class="cert-item"><span class="cert-ico">&#10003;</span><div><strong>Safe Animal Handling</strong><small>Issued Mar 2026 &middot; Valid 3 yrs</small></div></div>
+              <div class="cert-item"><span class="cert-ico">&#10003;</span><div><strong>Shelter Hygiene Certified</strong><small>Issued May 2026 &middot; Valid 1 yr</small></div></div>
+              <div class="cert-item pending"><span class="cert-ico">&#9675;</span><div><strong>Vet Assistant Training</strong><small>In progress &middot; 60% complete</small></div></div>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <h2 class="panel-title">Preferences</h2>
+            <div class="pref-row">
+              <div><strong>Shift reminders</strong><p>SMS reminder 1 hour before each shift</p></div>
+              <label class="switch"><input type="checkbox" checked /><span class="slider"></span></label>
+            </div>
+            <div class="pref-row">
+              <div><strong>New task alerts</strong><p>Email me when new tasks are assigned</p></div>
+              <label class="switch"><input type="checkbox" checked /><span class="slider"></span></label>
+            </div>
+            <div class="pref-row">
+              <div><strong>Weekly summary</strong><p>Receive your hours and task summary every Sunday</p></div>
+              <label class="switch"><input type="checkbox" /><span class="slider"></span></label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- logout modal -->
+  <div class="modal-overlay" id="logoutModal">
+    <div class="modal-box">
+      <div class="modal-paw">&#128049;</div>
+      <h3>Signing off?</h3>
+      <p>Thank you for your dedication today. Every hour you give saves animal lives.</p>
+      <div class="modal-actions">
+        <button class="btn-ghost" id="logoutCancel">Stay</button>
+        <button class="btn-primary" id="logoutConfirm">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/volunteer-dashboard.js"></script>
+</body>
+</html>

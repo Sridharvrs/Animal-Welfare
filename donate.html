@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donate — Stackly</title>
+<meta name="description" content="Give once or monthly. See exactly what your donation can fund — meals, vaccines, surgeries and rescues — and watch it reach the shelter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/donate.css">
+</head>
+<body data-page="donate">
+<script>document.documentElement.classList.remove('no-js')</script>
+<div id="site-header"></div>
+
+<main>
+  <!-- 1 · HERO : the filling donation jar -->
+  <section class="sec bg-peach d-hero" aria-label="Donate to Stackly">
+    <div class="wrap split">
+      <div>
+        <p class="tag tag-sun rv"><i data-i="heart"></i>Donate</p>
+        <h1 class="h1" data-split>Your ₹500 is somebody’s whole week.</h1>
+        <p class="lead rv" style="--d:.15s">It buys sixteen meals, or a vaccination and a dewormer — whatever the shelter needs most that day. Give once or every month and watch the jar fill — every rupee is tracked to a bowl, a bandage or a ride to the vet.</p>
+        <div class="goal rv" style="--d:.25s">
+          <div class="goal-top"><b id="goalRaised">₹5,68,400</b><span>raised of ₹8,00,000 monthly goal</span></div>
+          <div class="goal-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="71" aria-label="Monthly goal progress"><i id="goalFill"></i></div>
+          <p class="goal-foot"><span id="goalPct">71%</span> funded · <b data-count="1204">0</b> donors this month · 9 days left</p>
+        </div>
+        <div class="row-btns rv" style="--d:.35s">
+          <a class="btn btn-primary btn-lg" href="error.html"><i data-i="heart"></i>Give now</a>
+          <a class="btn btn-ghost btn-lg" href="error.html">Give monthly</a>
+        </div>
+      </div>
+
+      <div class="jar-wrap" aria-hidden="true">
+        <div class="coins"><span class="coin" style="--x:-46px;--dl:0s">₹</span><span class="coin" style="--x:16px;--dl:.9s">₹</span><span class="coin" style="--x:-14px;--dl:1.7s">🐾</span><span class="coin" style="--x:48px;--dl:2.4s">₹</span><span class="coin" style="--x:-30px;--dl:3.1s">₹</span></div>
+        <svg class="jar" viewBox="0 0 300 380">
+          <defs><clipPath id="jarClip"><path d="M72 96H228Q262 110 262 150V318Q262 352 228 352H72Q38 352 38 318V150Q38 110 72 96Z"/></clipPath></defs>
+          <path d="M72 96H228Q262 110 262 150V318Q262 352 228 352H72Q38 352 38 318V150Q38 110 72 96Z" fill="rgba(11,31,42,.05)"/>
+          <g clip-path="url(#jarClip)">
+            <g class="liquid" id="liquid" style="--ty:352px"><path class="wave w2" d="M-300 0Q-250 -14 -200 0T-100 0T0 0T100 0T200 0T300 0T400 0T500 0V300H-300Z"/><path class="wave w1" d="M-300 0Q-250 -12 -200 0T-100 0T0 0T100 0T200 0T300 0T400 0T500 0V300H-300Z"/></g>
+            <path d="M58 130Q52 220 60 320" stroke="rgba(11,31,42,.3)" stroke-width="7" stroke-linecap="round" fill="none"/>
+          </g>
+          <path d="M72 96H228Q262 110 262 150V318Q262 352 228 352H72Q38 352 38 318V150Q38 110 72 96Z" fill="none" stroke="#0B1F2A" stroke-width="6" stroke-linejoin="round"/>
+          <rect x="76" y="62" width="148" height="34" rx="10" fill="#FFC857" stroke="#0B1F2A" stroke-width="5"/>
+          <path d="M100 70V90M130 70V90M160 70V90M190 70V90" stroke="#0B1F2A" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+        </svg>
+        <div class="jar-label"><b id="jarTxt">₹5.7L</b><small>this month</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · CALCULATOR -->
+  <section class="sec bg-peach" id="calculator">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <p class="tag"><i data-i="sparkle"></i>Impact calculator</p>
+        <h2 class="h2">Choose a gift. See what it does.</h2>
+        <p class="lead muted">Slide, tap or type an amount. The panel on the right shows what that money can fund at our shelters — instantly.</p>
+      </div>
+
+      <div class="calc">
+        <div class="d-card calc-l rv-l">
+          <div class="seg" role="tablist" aria-label="Donation frequency">
+            <i class="seg-thumb"></i>
+            <button type="button" role="tab" class="on" data-f="once" aria-selected="true">One-time</button>
+            <button type="button" role="tab" data-f="month" aria-selected="false">Monthly <em>❤</em></button>
+          </div>
+
+          <p class="lab">Pick an amount</p>
+          <div class="amts" id="amts">
+            <button type="button" data-a="300">₹300</button>
+            <button type="button" data-a="500" class="on">₹500</button>
+            <button type="button" data-a="1000">₹1,000</button>
+            <button type="button" data-a="2500">₹2,500</button>
+            <button type="button" data-a="5000">₹5,000</button>
+            <div class="cust"><span>₹</span><input id="dCustom" type="number" inputmode="numeric" min="100" max="500000" placeholder="Other" aria-label="Custom amount in rupees"></div>
+          </div>
+          <input class="range" id="dRange" type="range" min="100" max="10000" step="100" value="500" aria-label="Adjust amount">
+          <div class="range-lab"><span>₹100</span><span>₹10,000</span></div>
+
+          <div class="field">
+            <label for="dFocus">Where should it go?</label>
+            <select class="input" id="dFocus">
+              <option>Where it’s needed most</option>
+              <option>Medical care &amp; surgeries</option>
+              <option>Food &amp; shelter</option>
+              <option>Rescue &amp; ambulance</option>
+              <option>Adoption &amp; rehoming</option>
+            </select>
+          </div>
+          <label class="switch"><input type="checkbox" id="dFee"><span class="sw"></span><span>Add 2% so the full amount reaches the animals</span></label>
+
+          <div class="total-row"><span>Your gift</span><b id="dTotal">₹500</b><small id="dFreq">one time</small></div>
+          <button class="btn btn-primary btn-lg" type="button" id="dGo"><i data-i="heart"></i>Continue to checkout</button>
+        </div>
+
+        <div class="d-card calc-r rv-r" aria-live="polite">
+          <p class="lab">Your <b id="impAmt">₹500</b> could fund <em>any one</em> of these</p>
+          <ul class="imp" id="imp"></ul>
+          <p class="imp-note" id="impNote"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · CHECKOUT -->
+  <section class="sec bg-peach" id="checkout">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="tag"><i data-i="lock"></i>Secure checkout</p>
+        <h2 class="h2">Almost there — just a few details.</h2>
+        <p class="lead muted">We’ll email your receipt instantly. This is a demo, so no money is charged and nothing is stored.</p>
+      </div>
+      <div class="co">
+        <form class="d-card co-form rv-l" id="coForm" novalidate>
+          <h3 class="h3">1 · About you</h3>
+          <div class="row2">
+            <div class="field"><label for="cName">Full name</label><input class="input" id="cName" autocomplete="name" placeholder="As on your receipt" oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')"><span class="err-msg">Please enter your full name.</span></div>
+            <div class="field"><label for="cMail">Email</label><input class="input" id="cMail" type="email" autocomplete="email" placeholder="you@example.com"><span class="err-msg">Enter a valid email address.</span></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="cPhone">Mobile</label><input class="input" id="cPhone" inputmode="tel" autocomplete="tel" placeholder="10-digit number" oninput="this.value=this.value.replace(/[^0-9]/g,'')"><span class="err-msg">Enter a valid 10-digit mobile number.</span></div>
+            <div class="field"><label for="cPan">PAN <small>(optional, for 80G receipt)</small></label><input class="input" id="cPan" maxlength="10" placeholder="ABCDE1234F" style="text-transform:uppercase"><span class="err-msg">PAN looks incorrect (format ABCDE1234F).</span></div>
+          </div>
+
+          <h3 class="h3" style="margin-top:8px">2 · Payment method</h3>
+          <div class="pay-tabs" role="tablist" aria-label="Payment method">
+            <button type="button" role="tab" class="on" data-p="upi"><i data-i="phone"></i>UPI</button>
+            <button type="button" role="tab" data-p="card"><i data-i="card"></i>Card</button>
+            <button type="button" role="tab" data-p="net"><i data-i="globe"></i>Net banking</button>
+          </div>
+          <div class="pay-pane on" data-pane="upi">
+            <div class="field"><label for="uId">UPI ID</label><input class="input" id="uId" placeholder="name@bank" autocomplete="off"><span class="err-msg">Enter a valid UPI ID like name@okbank.</span></div>
+          </div>
+          <div class="pay-pane" data-pane="card">
+            <div class="field"><label for="kNum">Card number</label><input class="input" id="kNum" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456" maxlength="19"><span class="err-msg">Enter a 16-digit card number.</span></div>
+            <div class="row3">
+              <div class="field"><label for="kName">Name on card</label><input class="input" id="kName" autocomplete="cc-name" placeholder="Full name"><span class="err-msg">Enter the name on the card.</span></div>
+              <div class="field"><label for="kExp">Expiry</label><input class="input" id="kExp" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5"><span class="err-msg">Use a future date, MM/YY.</span></div>
+              <div class="field"><label for="kCvv">CVV</label><input class="input" id="kCvv" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="3" type="password"><span class="err-msg">3 digits.</span></div>
+            </div>
+          </div>
+          <div class="pay-pane" data-pane="net">
+            <div class="field"><label for="nBank">Choose your bank</label><select class="input" id="nBank"><option value="">Select a bank</option><option>State Bank of India</option><option>HDFC Bank</option><option>ICICI Bank</option><option>Axis Bank</option><option>Indian Bank</option><option>Canara Bank</option><option>Kotak Mahindra Bank</option></select><span class="err-msg">Please choose a bank.</span></div>
+          </div>
+
+          <label class="switch"><input type="checkbox" id="cAnon"><span class="sw"></span><span>Keep my name off the public supporter wall</span></label>
+          <button class="btn btn-primary btn-lg" type="submit" id="cPay"><i data-i="lock"></i><span>Donate ₹500</span></button>
+          <p class="demo-note"><i data-i="info"></i>Demo checkout — no payment is processed and no details leave your browser.</p>
+        </form>
+
+        <aside class="d-card co-sum rv-r" aria-label="Donation summary">
+          <h3 class="h3">Your donation</h3>
+          <dl class="sum">
+            <div><dt>Type</dt><dd id="sType">One-time</dd></div>
+            <div><dt>Goes to</dt><dd id="sFocus">Where it’s needed most</dd></div>
+            <div><dt>Gift</dt><dd id="sGift">₹500</dd></div>
+            <div><dt>Processing cover</dt><dd id="sFee">—</dd></div>
+            <div class="sum-t"><dt>Total today</dt><dd id="sTotal">₹500</dd></div>
+          </dl>
+          <p class="sum-note"><i data-i="gift"></i>Eligible for an 80G tax-benefit receipt when a PAN is provided.</p>
+          <a class="edit" href="error.html">← Change amount</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · PLANS -->
+  <section class="sec bg-peach" id="plans">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <p class="tag tag-sun"><i data-i="calendar"></i>Monthly guardians</p>
+        <h2 class="h2">Small every month beats big once a year.</h2>
+        <p class="lead muted">Guardians give shelters something rare: predictable care. Pick a plan — you can pause or cancel any time.</p>
+      </div>
+      <div class="grid g4 plans">
+        <article class="d-card lift plan rv">
+          <span class="plan-ic"><i data-i="bowl"></i></span>
+          <h3 class="h3">Friend</h3>
+          <p class="price"><b>₹300</b>/month</p>
+          <ul><li><i data-i="check"></i>10 meals for the ward, every month</li><li><i data-i="check"></i>Monthly impact email</li></ul>
+          <button type="button" class="btn btn-dark" data-plan="300">Select plan</button>
+        </article>
+        <article class="d-card lift plan hot rv" style="--d:.1s">
+          <span class="ribbon">Most popular</span>
+          <span class="plan-ic"><i data-i="shield"></i></span>
+          <h3 class="h3">Guardian</h3>
+          <p class="price"><b>₹500</b>/month</p>
+          <ul><li><i data-i="check"></i>Feeds and vaccinates one animal</li><li><i data-i="check"></i>Photo update every quarter</li><li><i data-i="check"></i>Guardian badge on your profile</li></ul>
+          <button type="button" class="btn btn-primary" data-plan="500">Select plan</button>
+        </article>
+        <article class="d-card lift plan rv" style="--d:.2s">
+          <span class="plan-ic"><i data-i="paw"></i></span>
+          <h3 class="h3">Champion</h3>
+          <p class="price"><b>₹1,500</b>/month</p>
+          <ul><li><i data-i="check"></i>Sponsor a named animal</li><li><i data-i="check"></i>Monthly photo &amp; vet note</li><li><i data-i="check"></i>Shelter visit invitation</li></ul>
+          <button type="button" class="btn btn-dark" data-plan="1500">Select plan</button>
+        </article>
+        <article class="d-card lift plan rv" style="--d:.3s">
+          <span class="plan-ic"><i data-i="award"></i></span>
+          <h3 class="h3">Angel</h3>
+          <p class="price"><b>₹5,000</b>/month</p>
+          <ul><li><i data-i="check"></i>Funds a full recovery bed</li><li><i data-i="check"></i>Name on the Wall of Angels</li><li><i data-i="check"></i>Quarterly call with the vet team</li></ul>
+          <button type="button" class="btn btn-dark" data-plan="5000">Select plan</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · WHERE IT GOES -->
+  <section class="sec bg-peach" id="where">
+    <div class="wrap split">
+      <div class="donut-box rv-z">
+        <svg class="donut" viewBox="0 0 200 200" id="donut" role="img" aria-label="Breakdown of every ₹100 donated"></svg>
+        <div class="donut-c"><b id="dcVal">₹100</b><small id="dcLab">every ₹100 you give</small></div>
+      </div>
+      <div class="rv-r">
+        <p class="tag"><i data-i="pulse"></i>Radical transparency</p>
+        <h2 class="h2">Where every ₹100 goes.</h2>
+        <p class="lead muted">Hover or tap a line to see it on the ring. We publish the same numbers, audited, every year.</p>
+        <ul class="legend" id="legend"></ul>
+        <a class="btn btn-dark" href="error.html"><i data-i="eye"></i>See the full report</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · LIVE FEED + TRUST -->
+  <section class="sec bg-peach" id="wall">
+    <div class="wrap split">
+      <div class="rv-l">
+        <p class="tag"><span class="live"></span>Live supporter wall</p>
+        <h2 class="h2">People are giving right now.</h2>
+        <p class="lead muted">A sample of the latest gifts, updated as they arrive. Your own gift will appear here too, unless you choose to stay anonymous.</p>
+        <ul class="feed" id="feed" aria-live="polite"></ul>
+      </div>
+      <div class="rv-r">
+        <div class="grid g2 trust">
+          <div class="d-card lift"><i data-i="gift"></i><h3 class="h3">Instant receipt</h3><p>An e-receipt lands in your inbox in seconds, with 80G details.</p></div>
+          <div class="d-card lift"><i data-i="lock"></i><h3 class="h3">Encrypted</h3><p>Payments run through a certified gateway. We never see card data.</p></div>
+          <div class="d-card lift"><i data-i="camera"></i><h3 class="h3">Photo proof</h3><p>Monthly guardians receive real photos from the shelter floor.</p></div>
+          <div class="d-card lift"><i data-i="shield"></i><h3 class="h3">Audited</h3><p>Independent auditors sign off on our accounts every year.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · OTHER WAYS TO GIVE -->
+  <section class="sec bg-peach" id="ways">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="tag"><i data-i="gift"></i>More ways to give</p>
+        <h2 class="h2">Money isn’t the only kind of kindness.</h2>
+        <p class="lead muted">Prefer to give in another way? These are the requests our shelters ask for most.</p>
+      </div>
+      <div class="grid g3">
+        <div class="d-card lift way rv"><i data-i="bowl"></i><h3 class="h3">Food &amp; supplies</h3><p>Send sacks of kibble, blankets, leashes or litter straight from our wish-list.</p><a href="mailto:hello@Stackly.org?subject=In-kind%20donation">Ask for the wish-list →</a></div>
+        <div class="d-card lift way rv" style="--d:.08s"><i data-i="calendar"></i><h3 class="h3">Birthday fundraiser</h3><p>Turn your birthday into meals. We set up a page and share weekly progress with you.</p><a href="mailto:hello@Stackly.org?subject=Birthday%20fundraiser">Start a fundraiser →</a></div>
+        <div class="d-card lift way rv" style="--d:.16s"><i data-i="users"></i><h3 class="h3">Corporate giving</h3><p>CSR partnerships, payroll giving and team volunteer days with a full impact report.</p><a href="mailto:hello@Stackly.org?subject=Corporate%20partnership">Partner with us →</a></div>
+        <div class="d-card lift way rv" style="--d:.24s"><i data-i="heart"></i><h3 class="h3">In memory of a pet</h3><p>Honour a companion you lost with a tribute gift and a name on our memory wall.</p><a href="mailto:hello@Stackly.org?subject=Tribute%20gift">Create a tribute →</a></div>
+        <div class="d-card lift way rv" style="--d:.32s"><i data-i="med"></i><h3 class="h3">Medicines &amp; equipment</h3><p>Vets can donate surplus supplies; individuals can fund an X-ray or surgery kit.</p><a href="mailto:hello@Stackly.org?subject=Medical%20supplies">Give supplies →</a></div>
+        <div class="d-card lift way rv" style="--d:.4s"><i data-i="award"></i><h3 class="h3">Leave a legacy</h3><p>Include Stackly in your will and protect animals long after your lifetime.</p><a href="mailto:hello@Stackly.org?subject=Legacy%20giving">Talk to us →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · FAQ -->
+  <section class="sec bg-peach" id="dfaq">
+    <div class="wrap split faq-split">
+      <div class="rv-l">
+        <p class="tag"><i data-i="info"></i>Good to know</p>
+        <h2 class="h2">Donation questions, answered.</h2>
+        <p class="lead muted">Something missing? Write to <b>hello@Stackly.org</b> and a human will reply within a day.</p>
+      </div>
+      <div class="acc rv-r">
+        <div class="acc-item d-card open"><button class="acc-q" type="button" aria-expanded="true">Is my donation tax-deductible?<i data-i="plus"></i></button><div class="acc-a"><div><p>Eligible donations qualify for an 80G deduction in India. Add your PAN at checkout and your receipt will carry the registration details you need.</p></div></div></div>
+        <div class="acc-item d-card"><button class="acc-q" type="button" aria-expanded="false">Can I pause or cancel a monthly gift?<i data-i="plus"></i></button><div class="acc-a"><div><p>Yes, at any time. Reply to any receipt email with “pause” or “cancel” and we’ll stop the next charge — no forms, no guilt.</p></div></div></div>
+        <div class="acc-item d-card"><button class="acc-q" type="button" aria-expanded="false">Is online payment safe?<i data-i="plus"></i></button><div class="acc-a"><div><p>Real payments run through a PCI-compliant gateway, so card and UPI details go straight to the bank and are never stored by Stackly.</p></div></div></div>
+        <div class="acc-item d-card"><button class="acc-q" type="button" aria-expanded="false">Can I dedicate my gift to one animal?<i data-i="plus"></i></button><div class="acc-a"><div><p>Choose “Where it’s needed most” or a category above. To sponsor a specific animal, use the urgent cases on the Adopt page or pick the Champion plan.</p></div></div></div>
+        <div class="acc-item d-card"><button class="acc-q" type="button" aria-expanded="false">What happens if a fund is over-subscribed?<i data-i="plus"></i></button><div class="acc-a"><div><p>Extra money for a fully funded case moves to our Emergency Fund and is spent on the next animal in line. We always say so in the monthly report.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · CTA -->
+  <section class="sec bg-peach d-cta">
+    <div class="wrap center">
+      <h2 class="h2 rv">Ready to make someone’s week?</h2>
+      <p class="lead rv" style="--d:.1s;margin-inline:auto">It takes about a minute, and a stranger with four legs will never forget it.</p>
+      <div class="row-btns center-btns rv" style="--d:.2s">
+        <a class="btn btn-dark btn-lg" href="error.html"><i data-i="heart"></i>Donate now</a>
+        <a class="btn btn-ghost btn-lg" href="error.html">Adopt instead</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- success modal -->
+<div class="modal" id="thanks" role="dialog" aria-modal="true" aria-labelledby="tTitle" aria-hidden="true">
+  <div class="modal-box d-card thanks-box">
+    <button class="x-btn" type="button" id="tClose" aria-label="Close"><i data-i="x"></i></button>
+    <div class="check-big"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M14 27l8 8 16-17"/></svg></div>
+    <h3 class="h2" id="tTitle">Thank you, <span id="tName">friend</span>!</h3>
+    <p id="tMsg"></p>
+    <div class="receipt" id="tReceipt"></div>
+    <div class="row-btns center-btns">
+      <button type="button" class="btn btn-dark" id="tDl"><i data-i="gift"></i>Download receipt</button>
+      <a class="btn btn-primary" href="error.html">Meet the animals</a>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="js/common.js"></script>
+<script src="js/donate.js"></script>
+</body>
+</html>

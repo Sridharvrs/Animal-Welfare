@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Oops! | Stackly Animal Welfare</title>
+
+  <meta
+    name="description"
+    content="The page you're looking for has wandered off. Return to Stackly and continue helping animals."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/error.css">
+</head>
+
+<body class="error-page">
+
+  <main class="error-main">
+
+    <section class="error-hero">
+
+      <div class="error-wrap">
+
+        <!-- LEFT CONTENT -->
+        <div class="error-content">
+
+          <div class="error-tag">
+            <i data-i="paw"></i>
+            Lost in the shelter?
+          </div>
+
+          <div class="error-number">
+            4<span>0</span>4
+          </div>
+
+          <h1>
+            Oops! This page
+            <em>wandered off.</em>
+          </h1>
+
+          <p class="error-text">
+            Looks like the page you're looking for has gone exploring.
+            Don't worry — every lost path leads somewhere useful.
+            You can head back home or continue helping animals in need.
+          </p>
+
+          <div class="error-actions">
+
+            <a href="index.html" class="error-btn primary" onclick="history.back()">
+              <i data-i="arrow-left"></i>
+              Back to Dashboard
+            </a>
+
+            <button
+              type="button"
+              class="error-btn secondary"
+              onclick="location.href='index.html'"
+            >
+              <i data-i="home"></i>
+              Go Home
+            </button>
+
+          </div>
+
+          <div class="error-help">
+
+            <span class="help-icon">
+              <i data-i="heart"></i>
+            </span>
+
+            <div>
+              <strong>While you're here...</strong>
+              <p>
+                Your next click could help an animal find food,
+                care or a forever home.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT VISUAL -->
+        <div class="error-visual">
+
+          <span class="paw paw-1">🐾</span>
+          <span class="paw paw-2">🐾</span>
+          <span class="paw paw-3">🐾</span>
+
+          <div class="error-image-card">
+
+            <div class="image-label">
+              <i data-i="heart"></i>
+              Still making a difference
+            </div>
+
+            <img
+              src="images/pet1.webp"
+              alt="Animal waiting for care"
+            >
+
+            <div class="image-caption">
+              <span>
+                <i data-i="paw"></i>
+                Every animal matters
+              </span>
+
+              <b>♥</b>
+            </div>
+
+          </div>
+
+          <div class="floating-note note-one">
+            <i data-i="check"></i>
+            Page not found
+          </div>
+
+          <div class="floating-note note-two">
+            <i data-i="paw"></i>
+            But hope is here
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="js/common.js"></script>
+  <script src="js/error.js"></script>
+
+</body>
+</html>

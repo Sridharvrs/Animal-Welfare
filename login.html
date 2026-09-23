@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login or Sign up — Stackly</title>
+<meta name="description" content="Log in or create a Stackly account as a Donor or a Volunteer to track your giving, manage shifts and follow the animals you help.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/login.css">
+</head>
+<body data-page="login">
+<script>document.documentElement.classList.remove('no-js')</script>
+<div id="site-header"></div>
+
+<main>
+  <!-- 1 · AUTH -->
+  <section class="sec bg-blush l-hero" id="auth" aria-label="Login or sign up">
+    <div class="bubbles" aria-hidden="true">
+      <span class="bub b1"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=300&q=80" alt=""></span>
+      <span class="bub b2"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=300&q=80" alt=""></span>
+      <span class="bub b3"><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&q=80" alt=""></span>
+    </div>
+    <div class="wrap split auth-split">
+      <div class="welcome">
+        <p class="tag rv"><i data-i="paw"></i>Your Stackly account</p>
+        <h1 class="h1" data-split id="wTitle">Welcome back, friend.</h1>
+        <p class="lead rv" style="--d:.15s" id="wLead">Log in to see the animals your kindness has helped, and pick up right where you left off.</p>
+        <ul class="perks rv" style="--d:.25s" id="perks"></ul>
+      </div>
+
+      <div class="l-card auth rv-z" id="authCard">
+        <button class="x-btn" type="button" id="closeBtn" aria-label="Close and go back"><i data-i="x"></i></button>
+
+        <div id="authIn">
+          <h2 class="h3 a-title">Choose how you’d like to help</h2>
+          <div class="roles" role="radiogroup" aria-label="Account type">
+            <button type="button" class="role on" role="radio" aria-checked="true" data-role="Donor">
+              <span class="r-ic"><i data-i="heart"></i></span>
+              <b>Donor</b><small>Give &amp; sponsor</small>
+              <span class="r-tick"><i data-i="check"></i></span>
+            </button>
+            <button type="button" class="role" role="radio" aria-checked="false" data-role="Volunteer">
+              <span class="r-ic"><i data-i="users"></i></span>
+              <b>Volunteer</b><small>Give your time</small>
+              <span class="r-tick"><i data-i="check"></i></span>
+            </button>
+          </div>
+
+          <div class="seg" role="tablist" aria-label="Login or sign up">
+            <i class="seg-thumb"></i>
+            <button type="button" role="tab" class="on" data-m="login" aria-selected="true">Log in</button>
+            <button type="button" role="tab" data-m="signup" aria-selected="false">Create account</button>
+          </div>
+
+          <form id="authForm" novalidate>
+            <div class="field f-name" hidden><label for="aName">Full name</label><input class="input" id="aName" autocomplete="name" placeholder="Your name"><span class="err-msg">Please enter your name.</span></div>
+            <div class="field"><label for="aMail">Email</label><input class="input" id="aMail" type="email" autocomplete="email" placeholder="you@example.com"><span class="err-msg">Enter a valid email address.</span></div>
+            <div class="field">
+              <label for="aPass">Password</label>
+              <div class="pw"><input class="input" id="aPass" type="password" autocomplete="current-password" placeholder="At least 6 characters"><button type="button" class="eye" id="eye" aria-label="Show password"><i data-i="eye"></i></button></div>
+              <span class="err-msg">Password must be at least 6 characters.</span>
+              <div class="meter f-name" hidden aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <small class="meter-t f-name" id="meterT" hidden></small>
+            </div>
+            <div class="field f-name" hidden><label for="aPass2">Confirm password</label><input class="input" id="aPass2" type="password" autocomplete="new-password" placeholder="Repeat your password"><span class="err-msg">Passwords don’t match.</span></div>
+            <div class="row-between">
+              <label class="check"><input type="checkbox" id="aRemember" checked><span class="bx"><i data-i="check"></i></span><span id="aCheckTx">Keep me signed in</span></label>
+              <a href="error.html" class="forgot">Forgot password?</a>
+            </div>
+            <button class="btn btn-dark btn-lg go" type="submit" id="goBtn"><i data-i="user"></i><span>Log in as Donor</span></button>
+            <p class="demo"><i data-i="info"></i>Demo site: any valid email and a 6+ character password will work. Nothing leaves your browser.</p>
+          </form>
+        </div>
+
+        <!-- <div id="authOk" class="signed" hidden>
+          <div class="ok-ic"><i data-i="check"></i></div>
+          <h2 class="h3" id="okTitle">You’re signed in</h2>
+          <p id="okMsg"></p>
+          <div class="row-btns">
+            <a class="btn btn-dark" id="okGo" href="donate.html"><i data-i="arrow"></i>Continue</a>
+            <button class="btn btn-ghost" type="button" id="okOut">Log out</button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- <div id="site-footer"></div> -->
+<script src="js/common.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

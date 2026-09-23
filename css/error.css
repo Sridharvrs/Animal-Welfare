@@ -1,0 +1,793 @@
+/* =========================================================
+   STACKLY — ANIMAL WELFARE ERROR PAGE
+   ========================================================= */
+
+:root {
+  --error-cream: #fff9ef;
+  --error-paper: #fffdf8;
+  --error-ink: #17211b;
+  --error-muted: #69736c;
+  --error-green: #285943;
+  --error-green-dark: #183d2c;
+  --error-orange: #e89045;
+  --error-yellow: #f5c86a;
+  --error-border: rgba(23, 33, 27, .12);
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.error-page {
+  /* background: var(--error-cream); */
+  color: var(--error-ink);
+  overflow-x: hidden;
+}
+
+.error-main {
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   MAIN HERO
+   ========================================================= */
+
+.error-hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  padding: 90px 0 80px;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(245, 200, 106, .20),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(40, 89, 67, .10),
+      transparent 30%
+    ),
+    var(--error-cream);
+}
+
+
+/* =========================================================
+   WRAPPER
+   ========================================================= */
+
+.error-wrap {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   HERO GRID
+   ========================================================= */
+
+.error-hero .error-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, .85fr);
+  gap: 80px;
+  align-items: center;
+}
+
+
+/* =========================================================
+   TAG
+   ========================================================= */
+
+.error-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 9px 15px;
+
+  border: 1px solid rgba(40, 89, 67, .18);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, .65);
+
+  color: var(--error-green);
+
+  font-family: Manrope, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.error-tag svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* =========================================================
+   404 NUMBER
+   ========================================================= */
+
+.error-number {
+  margin-top: 22px;
+
+  font-family: Fraunces, serif;
+  font-size: clamp(100px, 15vw, 190px);
+  line-height: .78;
+  font-weight: 900;
+  letter-spacing: -.08em;
+
+  color: var(--error-green);
+}
+
+.error-number span {
+  color: var(--error-orange);
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.error-content h1 {
+  max-width: 650px;
+  margin: 35px 0 18px;
+
+  font-family: Fraunces, serif;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+}
+
+.error-content h1 em {
+  display: block;
+  color: var(--error-orange);
+  font-style: normal;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.error-text {
+  max-width: 610px;
+
+  margin: 0;
+
+  color: var(--error-muted);
+
+  font-family: Manrope, sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+
+  margin-top: 30px;
+}
+
+.error-btn {
+  min-height: 52px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 0 22px;
+
+  border-radius: 12px;
+
+  font-family: Manrope, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+}
+
+.error-btn:hover {
+  transform: translateY(-3px);
+}
+
+.error-btn.primary {
+  background: var(--error-green);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(40, 89, 67, .20);
+}
+
+.error-btn.primary:hover {
+  background: var(--error-green-dark);
+}
+
+.error-btn.secondary {
+  border: 1px solid var(--error-border);
+  background: #fff;
+  color: var(--error-ink);
+}
+
+.error-btn.secondary:hover {
+  box-shadow: 0 10px 25px rgba(23, 33, 27, .08);
+}
+
+
+/* =========================================================
+   HELP BOX
+   ========================================================= */
+
+.error-help {
+  max-width: 520px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 35px;
+  padding: 17px 19px;
+
+  border: 1px solid var(--error-border);
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, .55);
+}
+
+.help-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: rgba(232, 144, 69, .13);
+  color: var(--error-orange);
+}
+
+.error-help strong {
+  display: block;
+
+  font-family: Manrope, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.error-help p {
+  margin: 3px 0 0;
+
+  color: var(--error-muted);
+
+  font-family: Manrope, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   VISUAL
+   ========================================================= */
+
+.error-visual {
+  min-height: 570px;
+
+  display: grid;
+  place-items: center;
+
+  position: relative;
+}
+
+
+/* =========================================================
+   IMAGE CARD
+   ========================================================= */
+
+.error-image-card {
+  width: min(430px, 100%);
+
+  padding: 12px;
+
+  position: relative;
+  z-index: 2;
+
+  border: 1px solid rgba(23, 33, 27, .10);
+  border-radius: 30px;
+
+  background: #fff;
+
+  box-shadow:
+    0 30px 70px rgba(23, 33, 27, .13);
+
+  transform: rotate(2deg);
+
+  transition: transform .35s ease;
+}
+
+.error-image-card:hover {
+  transform: rotate(0deg) translateY(-6px);
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.error-image-card img {
+  width: 100%;
+  height: 470px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 22px;
+}
+
+
+/* =========================================================
+   IMAGE LABEL
+   ========================================================= */
+
+.image-label {
+  position: absolute;
+  top: 27px;
+  left: 27px;
+  z-index: 3;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 9px 13px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, .93);
+
+  color: var(--error-green);
+
+  font-family: Manrope, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   IMAGE CAPTION
+   ========================================================= */
+
+.image-caption {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 8px 0 12px;
+}
+
+.image-caption span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-family: Manrope, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.image-caption span i {
+  color: var(--error-orange);
+}
+
+.image-caption b {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--error-green);
+  color: #fff;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   FLOATING PAWS
+   ========================================================= */
+
+.paw {
+  position: absolute;
+
+  font-size: 25px;
+
+  opacity: .55;
+
+  animation: pawFloat 4s ease-in-out infinite;
+}
+
+.paw-1 {
+  top: 7%;
+  left: 4%;
+  transform: rotate(-20deg);
+}
+
+.paw-2 {
+  top: 48%;
+  right: 0;
+  animation-delay: .8s;
+}
+
+.paw-3 {
+  bottom: 8%;
+  left: 7%;
+  animation-delay: 1.5s;
+}
+
+@keyframes pawFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-10deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(5deg);
+  }
+}
+
+
+/* =========================================================
+   FLOATING NOTES
+   ========================================================= */
+
+.floating-note {
+  position: absolute;
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 15px;
+
+  border: 1px solid rgba(23, 33, 27, .09);
+  border-radius: 12px;
+
+  background: #fff;
+
+  box-shadow: 0 14px 30px rgba(23, 33, 27, .10);
+
+  font-family: Manrope, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.note-one {
+  top: 17%;
+  right: -4%;
+  transform: rotate(5deg);
+}
+
+.note-one i {
+  color: var(--error-orange);
+}
+
+.note-two {
+  bottom: 15%;
+  left: -4%;
+  transform: rotate(-5deg);
+}
+
+.note-two i {
+  color: var(--error-green);
+}
+
+
+/* =========================================================
+   QUICK LINKS
+   ========================================================= */
+
+.error-links {
+  padding: 90px 0;
+
+  border-top: 1px solid var(--error-border);
+
+  background: var(--error-paper);
+}
+
+.links-heading {
+  max-width: 650px;
+  margin-bottom: 35px;
+}
+
+.error-mini-tag {
+  margin: 0 0 10px;
+
+  color: var(--error-orange);
+
+  font-family: Manrope, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.links-heading h2 {
+  margin: 0;
+
+  font-family: Fraunces, serif;
+  font-size: clamp(34px, 4vw, 50px);
+  line-height: 1.05;
+}
+
+
+/* =========================================================
+   QUICK GRID
+   ========================================================= */
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.quick-card {
+  min-height: 145px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 15px;
+
+  padding: 23px;
+
+  border: 1px solid var(--error-border);
+  border-radius: 18px;
+
+  background: #fff;
+
+  color: var(--error-ink);
+  text-decoration: none;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+.quick-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(40, 89, 67, .25);
+
+  box-shadow: 0 18px 40px rgba(23, 33, 27, .09);
+}
+
+.quick-icon {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+
+  background: rgba(40, 89, 67, .09);
+  color: var(--error-green);
+}
+
+.quick-card h3 {
+  margin: 0 0 5px;
+
+  font-family: Fraunces, serif;
+  font-size: 22px;
+}
+
+.quick-card p {
+  margin: 0;
+
+  color: var(--error-muted);
+
+  font-family: Manrope, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.quick-arrow {
+  color: var(--error-orange);
+
+  transition: transform .25s ease;
+}
+
+.quick-card:hover .quick-arrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .error-hero {
+    padding: 70px 0;
+  }
+
+  .error-hero .error-wrap {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .error-content {
+    text-align: center;
+  }
+
+  .error-content h1 {
+    margin-inline: auto;
+  }
+
+  .error-text {
+    margin-inline: auto;
+  }
+
+  .error-actions {
+    justify-content: center;
+  }
+
+  .error-help {
+    margin-inline: auto;
+    text-align: left;
+  }
+
+  .error-visual {
+    min-height: 500px;
+  }
+
+  .quick-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .error-wrap {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .error-hero {
+    min-height: auto;
+    padding: 55px 0 65px;
+  }
+
+  .error-number {
+    margin-top: 20px;
+    font-size: 105px;
+  }
+
+  .error-content h1 {
+    margin-top: 25px;
+
+    font-size: 40px;
+  }
+
+  .error-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .error-actions {
+    flex-direction: column;
+  }
+
+  .error-btn {
+    width: 100%;
+  }
+
+  .error-help {
+    align-items: flex-start;
+  }
+
+  .error-visual {
+    min-height: 410px;
+  }
+
+  .error-image-card {
+    width: min(340px, 88vw);
+  }
+
+  .error-image-card img {
+    height: 360px;
+  }
+
+  .image-label {
+    top: 22px;
+    left: 22px;
+  }
+
+  .floating-note {
+    font-size: 9px;
+    padding: 9px 11px;
+  }
+
+  .note-one {
+    right: -1%;
+  }
+
+  .note-two {
+    left: -1%;
+  }
+
+  .error-links {
+    padding: 65px 0;
+  }
+
+  .links-heading h2 {
+    font-size: 35px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+

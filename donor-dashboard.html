@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PawsHope — Donor Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/donor.css" />
+</head>
+<body data-role="donor">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="logo-text">
+        <a class="logo" href="index.html" aria-label="Stackly — home">
+            <img src="images/logo.webp" alt="Stackly">
+        </a>
+      </div>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close menu">&times;</button>
+    </div>
+
+    <div class="sidebar-user">
+      <div class="user-avatar avatarLetter">EM</div>
+      <div class="user-meta">
+        <strong class="profileName">Emma Larson</strong>
+        <span>Monthly Donor &middot; Gold</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <p class="nav-group">Main</p>
+      <a href="#" class="nav-item active" data-module="overview">
+        <span class="nav-ico">&#9632;</span> Overview
+      </a>
+      <a href="#" class="nav-item" data-module="donate">
+        <span class="nav-ico">&#10084;</span> Make a Donation
+      </a>
+      <a href="#" class="nav-item" data-module="history">
+        <span class="nav-ico">&#9776;</span> Donation History
+      </a>
+      <p class="nav-group">Engagement</p>
+      <a href="#" class="nav-item" data-module="campaigns">
+        <span class="nav-ico">&#9733;</span> Active Campaigns
+      </a>
+      <a href="#" class="nav-item" data-module="impact">
+        <span class="nav-ico">&#127795;</span> My Impact
+      </a>
+      <a href="#" class="nav-item" data-module="profile">
+        <span class="nav-ico">&#9673;</span> Profile &amp; Settings
+      </a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <a href="index.html" class="nav-item logout" id="logoutBtn">
+        <span class="nav-ico">&#8592;</span> Logout
+      </a>
+    </div>
+  </aside>
+
+  <!-- overlay for mobile -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+    <!-- sticky topbar -->
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="topbar-title" id="topbarTitle">Overview</div>
+      <div class="topbar-actions">
+        <button class="icon-btn" aria-label="Notifications">
+          <span class="bell">&#128276;</span>
+          <span class="badge-dot">3</span>
+        </button>
+        <div class="topbar-user">
+          <div class="user-avatar sm avatarLetter">EM</div>
+          <span class="tuname profileName">Emma L.</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ===================== OVERVIEW ===================== -->
+      <section class="module active" id="m-overview">
+        <div class="greeting reveal">
+          <p class="greet-eyebrow">Welcome back, <span class="profileName">Donor</span></p>
+          <h1>Your generosity is changing lives &#128062;</h1>
+          <p class="greet-sub">Here's a snapshot of your contribution this month.</p>
+        </div>
+
+        <!-- stat cards -->
+        <div class="stat-row">
+          <div class="stat-card reveal">
+            <div class="stat-ico orange">&#10084;</div>
+            <div class="stat-data">
+              <span class="stat-val" data-count="2480" data-prefix="$">$0</span>
+              <span class="stat-label">Total Donated</span>
+            </div>
+            <span class="stat-trend up">&#9650; 12% this month</span>
+          </div>
+          <div class="stat-card reveal d1">
+            <div class="stat-ico amber">&#9733;</div>
+            <div class="stat-data">
+              <span class="stat-val" data-count="14">0</span>
+              <span class="stat-label">Campaigns Supported</span>
+            </div>
+            <span class="stat-trend up">&#9650; 3 new</span>
+          </div>
+          <div class="stat-card reveal d2">
+            <div class="stat-ico sun">&#127795;</div>
+            <div class="stat-data">
+              <span class="stat-val" data-count="86">0</span>
+              <span class="stat-label">Animals Helped</span>
+            </div>
+            <span class="stat-trend up">&#9650; 18 rescued</span>
+          </div>
+          <div class="stat-card reveal d3">
+            <div class="stat-ico teal">&#128197;</div>
+            <div class="stat-data">
+              <span class="stat-val">8 mo</span>
+              <span class="stat-label">Active Streak</span>
+            </div>
+            <span class="stat-trend">Monthly giver</span>
+          </div>
+        </div>
+
+        <!-- chart + side panel -->
+        <div class="overview-grid">
+          <div class="panel reveal">
+            <div class="panel-head">
+              <h2>Donation Trend</h2>
+              <span class="pill">Last 8 months</span>
+            </div>
+            <div class="chart-area">
+              <div class="bars">
+                <div class="bar-col"><span class="bar" style="--h:40%"></span><small>Jan</small></div>
+                <div class="bar-col"><span class="bar" style="--h:55%"></span><small>Feb</small></div>
+                <div class="bar-col"><span class="bar" style="--h:48%"></span><small>Mar</small></div>
+                <div class="bar-col"><span class="bar" style="--h:70%"></span><small>Apr</small></div>
+                <div class="bar-col"><span class="bar" style="--h:62%"></span><small>May</small></div>
+                <div class="bar-col"><span class="bar" style="--h:85%"></span><small>Jun</small></div>
+                <div class="bar-col"><span class="bar" style="--h:75%"></span><small>Jul</small></div>
+                <div class="bar-col"><span class="bar" style="--h:95%"></span><small>Aug</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel reveal d1">
+            <div class="panel-head"><h2>Causes You Support</h2></div>
+            <div class="cause-list">
+              <div class="cause-item">
+                <span class="cause-dot" style="background:var(--orange)"></span>
+                <span class="cause-name">Food &amp; Shelter</span>
+                <span class="cause-pct">42%</span>
+              </div>
+              <div class="cause-item">
+                <span class="cause-dot" style="background:var(--teal)"></span>
+                <span class="cause-name">Medical Care</span>
+                <span class="cause-pct">31%</span>
+              </div>
+              <div class="cause-item">
+                <span class="cause-dot" style="background:var(--sun)"></span>
+                <span class="cause-name">Wildlife Rescue</span>
+                <span class="cause-pct">18%</span>
+              </div>
+              <div class="cause-item">
+                <span class="cause-dot" style="background:var(--amber)"></span>
+                <span class="cause-name">Adoption Drives</span>
+                <span class="cause-pct">9%</span>
+              </div>
+            </div>
+            <div class="donut">
+              <div class="donut-ring">
+                <div class="donut-seg s1"></div>
+                <div class="donut-seg s2"></div>
+                <div class="donut-seg s3"></div>
+                <div class="donut-seg s4"></div>
+              </div>
+              <div class="donut-center"><strong>14</strong><small>causes</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- recent activity -->
+        <div class="panel reveal">
+          <div class="panel-head">
+            <h2>Recent Activity</h2>
+             <a href="dashboardError.html" class="link-btn">View all &rarr;</a>       <!-- data-go="history" -->
+          </div>
+          <div class="activity-list">
+            <div class="activity-row">
+              <span class="act-ico orange">&#10084;</span>
+              <div><strong>$50 donated</strong> to "Winter Shelter Fund"</div>
+              <span class="act-date">2 days ago</span>
+            </div>
+            <div class="activity-row">
+              <span class="act-ico teal">&#127795;</span>
+              <div><strong>Impact update</strong> — You helped rescue 3 puppies</div>
+              <span class="act-date">5 days ago</span>
+            </div>
+            <div class="activity-row">
+              <span class="act-ico sun">&#9733;</span>
+              <div><strong>Joined campaign</strong> "Elephant Sanctuary Expansion"</div>
+              <span class="act-date">1 week ago</span>
+            </div>
+            <div class="activity-row">
+              <span class="act-ico amber">&#10084;</span>
+              <div><strong>$100 donated</strong> to "Emergency Vet Care"</div>
+              <span class="act-date">2 weeks ago</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== DONATE ===================== -->
+      <section class="module" id="m-donate">
+        <div class="greeting reveal">
+          <p class="greet-eyebrow">Make a Donation</p>
+          <h1>Choose how you'd like to help &#10084;</h1>
+          <p class="greet-sub">Every dollar goes directly to verified shelters and animal care programs.</p>
+        </div>
+
+        <div class="donate-layout">
+          <div class="panel reveal">
+            <h2 class="panel-title">Quick Donation</h2>
+            <div class="amount-grid">
+              <button class="amount-btn">$10</button>
+              <button class="amount-btn active">$25</button>
+              <button class="amount-btn">$50</button>
+              <button class="amount-btn">$100</button>
+              <button class="amount-btn">$250</button>
+              <button class="amount-btn">Custom</button>
+            </div>
+
+            <div class="freq-toggle">
+              <button class="freq-btn active" data-freq="once">One-time</button>
+              <button class="freq-btn" data-freq="monthly">Monthly</button>
+            </div>
+
+            <label class="field-label">Choose a cause</label>
+            <select class="field-select">
+              <option>Where it's needed most</option>
+              <option>Food &amp; Shelter</option>
+              <option>Emergency Medical Care</option>
+              <option>Wildlife &amp; Sanctuary</option>
+              <option>Adoption Programs</option>
+            </select>
+
+            <label class="field-label">Your message (optional)</label>
+            <textarea class="field-area" rows="3" placeholder="Leave a note of encouragement..."></textarea>
+
+            <button class="btn-primary" onclick="location.href='dashboardError.html'">Donate $25 Now &#10084;</button>      <!-- id="donateSubmit" -->
+            <p class="secure-note">&#128274; Secure payment &middot; 100% goes to animals</p>
+          </div>
+
+          <div class="donate-side reveal d1">
+            <div class="impact-preview">
+              <h3>Your $25 provides</h3>
+              <ul>
+                <li><span>&#127906;</span> 1 week of food for a rescued dog</li>
+                <li><span>&#128138;</span> Core vaccinations for 1 puppy</li>
+                <li><span>&#127968;</span> Warm bedding for 2 shelter cats</li>
+              </ul>
+            </div>
+            <div class="featured-cause">
+              <img src="https://images.pexels.com/photos/16652367/pexels-photo-16652367.jpeg?auto=compress&cs=tinysrgb&h=300&w=400" alt="Adoptable dog" />
+              <div class="fc-body">
+                <h4>Bella needs a friend</h4>
+                <p>Bella is recovering from injury. Help fund her ongoing care.</p>
+                <div class="mini-progress"><span style="width:68%"></span></div>
+                <span class="fc-raised">$3,400 raised of $5,000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== HISTORY ===================== -->
+      <section class="module" id="m-history">
+        <div class="greeting reveal">
+          <p class="greet-eyebrow">Donation History</p>
+          <h1>Your giving journey &#128197;</h1>
+          <p class="greet-sub">A complete record of every life you've touched.</p>
+        </div>
+
+        <div class="filter-bar reveal">
+          <input type="text" class="filter-input" placeholder="Search donations..." id="historySearch" />
+          <select class="filter-select" id="historyFilter">
+            <option value="all">All time</option>
+            <option value="month">This month</option>
+            <option value="quarter">Last 3 months</option>
+            <option value="year">This year</option>
+          </select>
+        </div>
+
+        <div class="panel reveal d1">
+          <table class="data-table">
+            <thead>
+              <tr><th>Date</th><th>Campaign</th><th>Cause</th><th>Amount</th><th>Status</th><th>Receipt</th></tr>
+            </thead>
+            <tbody id="historyBody">
+              <tr><td>Sep 20, 2026</td><td>Winter Shelter Fund</td><td>Food &amp; Shelter</td><td>$50</td><td><span class="status completed">Completed</span></td><td><a href="#" class="link-btn">PDF</a></td></tr>
+              <tr><td>Sep 15, 2026</td><td>Emergency Vet Care</td><td>Medical</td><td>$100</td><td><span class="status completed">Completed</span></td><td><a href="#" class="link-btn">PDF</a></td></tr>
+              <tr><td>Sep 08, 2026</td><td>Elephant Sanctuary</td><td>Wildlife</td><td>$75</td><td><span class="status completed">Completed</span></td><td><a href="#" class="link-btn">PDF</a></td></tr>
+              <tr><td>Aug 28, 2026</td><td>Puppy Rescue Mission</td><td>Medical</td><td>$25</td><td><span class="status completed">Completed</span></td><td><a href="#" class="link-btn">PDF</a></td></tr>
+              <tr><td>Aug 14, 2026</td><td>Cat Shelter Renovation</td><td>Shelter</td><td>$200</td><td><span class="status completed">Completed</span></td><td><a href="#" class="link-btn">PDF</a></td></tr>
+              <tr><td>Aug 01, 2026</td><td>Stray Feeding Program</td><td>Food</td><td>$50</td><td><span class="status completed">Completed</span></td><td><a href="#" class="link-btn">PDF</a></td></tr>
+              <tr><td>Jul 22, 2026</td><td>Bird Sanctuary Build</td><td>Wildlife</td><td>$120</td><td><span class="status completed">Completed</span></td><td><a href="#" class="link-btn">PDF</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="history-summary reveal d2">
+          <div class="sum-card"><strong>$2,480</strong><span>Total Given</span></div>
+          <div class="sum-card"><strong>14</strong><span>Campaigns</span></div>
+          <div class="sum-card"><strong>7</strong><span>This Year</span></div>
+          <div class="sum-card"><strong>86</strong><span>Animals Helped</span></div>
+        </div>
+      </section>
+
+      <!-- ===================== CAMPAIGNS ===================== -->
+      <section class="module" id="m-campaigns">
+        <div class="greeting reveal">
+          <p class="greet-eyebrow">Active Campaigns</p>
+          <h1>Campaigns needing your support &#9733;</h1>
+          <p class="greet-sub">Choose a cause close to your heart and make an immediate difference.</p>
+        </div>
+
+        <div class="campaign-grid">
+          <article class="campaign-card reveal">
+            <img src="https://images.pexels.com/photos/6568500/pexels-photo-6568500.jpeg?auto=compress&cs=tinysrgb&h=250&w=400" alt="German Shepherd" />
+            <div class="camp-body">
+              <span class="camp-tag">Medical</span>
+              <h3>Help Rocky Walk Again</h3>
+              <p>Rocky needs orthopedic surgery after a highway accident. Every dollar brings him closer to running free.</p>
+              <div class="camp-progress"><span style="width:72%"></span></div>
+              <div class="camp-meta"><strong>$7,200</strong> raised of $10,000</div>
+              <button class="btn-card" onclick="location.href='dashboardError.html'">Donate &#10084;</button>
+            </div>
+          </article>
+          <article class="campaign-card reveal d1">
+            <img src="https://images.pexels.com/photos/20049565/pexels-photo-20049565.jpeg?auto=compress&cs=tinysrgb&h=250&w=400" alt="Cats in shelter" />
+            <div class="camp-body">
+              <span class="camp-tag">Shelter</span>
+              <h3>Warm Beds for Winter</h3>
+              <p>60 shelter cats need heated bedding and insulation before the cold season arrives.</p>
+              <div class="camp-progress"><span style="width:45%"></span></div>
+              <div class="camp-meta"><strong>$2,250</strong> raised of $5,000</div>
+              <button class="btn-card" onclick="location.href='dashboardError.html'">Donate &#10084;</button>
+            </div>
+          </article>
+          <article class="campaign-card reveal d2">
+            <img src="https://images.pexels.com/photos/31730950/pexels-photo-31730950.jpeg?auto=compress&cs=tinysrgb&h=250&w=400" alt="Elephant sanctuary" />
+            <div class="camp-body">
+              <span class="camp-tag">Wildlife</span>
+              <h3>Elephant Sanctuary Expansion</h3>
+              <p>Help us add 12 acres of grazing land so three rescued elephants can roam freely.</p>
+              <div class="camp-progress"><span style="width:88%"></span></div>
+              <div class="camp-meta"><strong>$44,000</strong> raised of $50,000</div>
+              <button class="btn-card" onclick="location.href='dashboardError.html'">Donate &#10084;</button>
+            </div>
+          </article>
+          <article class="campaign-card reveal d3">
+            <img src="https://images.pexels.com/photos/16465626/pexels-photo-16465626.jpeg?auto=compress&cs=tinysrgb&h=250&w=400" alt="Volunteer feeding cats" />
+            <div class="camp-body">
+              <span class="camp-tag">Food</span>
+              <h3>Feed 200 Strays</h3>
+              <p>A month-long feeding program for street animals in need across 4 cities.</p>
+              <div class="camp-progress"><span style="width:30%"></span></div>
+              <div class="camp-meta"><strong>$1,500</strong> raised of $5,000</div>
+              <button class="btn-card" onclick="location.href='dashboardError.html'">Donate &#10084;</button>
+            </div>
+          </article>
+          <article class="campaign-card reveal">
+            <img src="https://images.pexels.com/photos/3790942/pexels-photo-3790942.jpeg?auto=compress&cs=tinysrgb&h=250&w=400" alt="Puppy" />
+            <div class="camp-body">
+              <span class="camp-tag">Adoption</span>
+              <h3>Puppy Adoption Drive</h3>
+              <p>Fund vaccination, microchipping, and adoption event logistics for 30 puppies.</p>
+              <div class="camp-progress"><span style="width:55%"></span></div>
+              <div class="camp-meta"><strong>$3,300</strong> raised of $6,000</div>
+              <button class="btn-card" onclick="location.href='dashboardError.html'">Donate &#10084;</button>
+            </div>
+          </article>
+          <article class="campaign-card reveal d1">
+            <img src="https://images.pexels.com/photos/7008099/pexels-photo-7008099.jpeg?auto=compress&cs=tinysrgb&h=250&w=400" alt="Vet treating dog" />
+            <div class="camp-body">
+              <span class="camp-tag">Medical</span>
+              <h3>Emergency Vet Fund</h3>
+              <p>24/7 emergency medical care for animals brought in with critical injuries.</p>
+              <div class="camp-progress"><span style="width:62%"></span></div>
+              <div class="camp-meta"><strong>$6,200</strong> raised of $10,000</div>
+              <button class="btn-card" onclick="location.href='dashboardError.html'">Donate &#10084;</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== IMPACT ===================== -->
+      <section class="module" id="m-impact">
+        <div class="greeting reveal">
+          <p class="greet-eyebrow">My Impact</p>
+          <h1>See the lives you've saved &#127795;</h1>
+          <p class="greet-sub">Real animals, real stories — all made possible by your kindness.</p>
+        </div>
+
+        <div class="impact-hero reveal">
+          <div class="impact-hero-stats">
+            <div><strong data-count="86">0</strong><span>Animals Fed</span></div>
+            <div><strong data-count="23">0</strong><span>Medical Treatments</span></div>
+            <div><strong data-count="12">0</strong><span>Adopted</span></div>
+            <div><strong data-count="340">0</strong><span>Meals Provided</span></div>
+          </div>
+        </div>
+
+        <div class="impact-grid">
+          <article class="impact-story reveal">
+            <img src="https://images.pexels.com/photos/16652367/pexels-photo-16652367.jpeg?auto=compress&cs=tinysrgb&h=300&w=400" alt="Bella" />
+            <div class="is-body">
+              <span class="impact-badge">Adopted</span>
+              <h3>Bella's Happy Ending</h3>
+              <p>Your donations funded Bella's medical recovery. She was adopted last month into a loving family!</p>
+            </div>
+          </article>
+          <article class="impact-story reveal d1">
+            <img src="https://images.pexels.com/photos/7008099/pexels-photo-7008099.jpeg?auto=compress&cs=tinysrgb&h=300&w=400" alt="Vet care" />
+            <div class="is-body">
+              <span class="impact-badge">Healed</span>
+              <h3>Rocky's Surgery</h3>
+              <p>Rocky received life-saving orthopedic surgery thanks to your contributions. He's walking again!</p>
+            </div>
+          </article>
+          <article class="impact-story reveal d2">
+            <img src="https://images.pexels.com/photos/3691288/pexels-photo-3691288.jpeg?auto=compress&cs=tinysrgb&h=300&w=400" alt="Elephants" />
+            <div class="is-body">
+              <span class="impact-badge">Sanctuary</span>
+              <h3>Elephants Roaming Free</h3>
+              <p>Your wildlife fund helped expand the sanctuary. Three elephants now enjoy open grassland.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="panel reveal">
+          <div class="panel-head"><h2>Badges &amp; Achievements</h2></div>
+          <div class="badge-row">
+            <div class="badge-item"><span class="badge-ico orange">&#9733;</span><strong>Gold Donor</strong><small>$2,000+ given</small></div>
+            <div class="badge-item"><span class="badge-ico teal">&#128062;</span><strong>Animal Savior</strong><small>50+ animals helped</small></div>
+            <div class="badge-item"><span class="badge-ico sun">&#128197;</span><strong>8-Month Streak</strong><small>Monthly giving</small></div>
+            <div class="badge-item"><span class="badge-ico amber">&#127795;</span><strong>Wildlife Guardian</strong><small>Sanctuary supporter</small></div>
+            <div class="badge-item locked"><span class="badge-ico">&#128274;</span><strong>Platinum Donor</strong><small>$5,000 to unlock</small></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PROFILE ===================== -->
+      <section class="module" id="m-profile">
+        <div class="greeting reveal">
+          <p class="greet-eyebrow">Profile &amp; Settings</p>
+          <h1>Manage your account &#9673;</h1>
+          <p class="greet-sub">Update your details, preferences, and payment methods.</p>
+        </div>
+
+        <div class="profile-layout">
+          <div class="profile-card reveal">
+            <div class="profile-avatar avatarLetter">EM</div>
+            <h3 class="profileName">Emma Larson</h3>
+            <span class="profile-role">Gold Monthly Donor</span>
+            <div class="profile-stats">
+              <div><strong>$2,480</strong><span>Total Given</span></div>
+              <div><strong>14</strong><span>Campaigns</span></div>
+              <div><strong>8 mo</strong><span>Streak</span></div>
+            </div>
+          </div>
+
+          <div class="panel reveal d1">
+            <h2 class="panel-title">Personal Information</h2>
+            <div class="form-grid">
+              <div><label>First Name</label><input type="text" value="Emma" class="field-input" /></div>
+              <div><label>Last Name</label><input type="text" value="Larson" class="field-input" /></div>
+              <div><label>Email</label><input type="email" value="emma.larson@email.com" class="field-input" /></div>
+              <div><label>Phone</label><input type="tel" value="+1 (555) 123-4567" class="field-input" /></div>
+              <div><label>City</label><input type="text" value="Greenville" class="field-input" /></div>
+              <div><label>Country</label><input type="text" value="United States" class="field-input" /></div>
+            </div>
+            <button class="btn-primary" id="saveProfile">Save Changes</button>
+          </div>
+
+          <div class="panel reveal d2">
+            <h2 class="panel-title">Preferences</h2>
+            <div class="pref-row">
+              <div><strong>Email updates</strong><p>Receive stories about animals you've helped</p></div>
+              <label class="switch"><input type="checkbox" checked /><span class="slider"></span></label>
+            </div>
+            <div class="pref-row">
+              <div><strong>Monthly receipt</strong><p>Tax receipt sent at the end of each month</p></div>
+              <label class="switch"><input type="checkbox" checked /><span class="slider"></span></label>
+            </div>
+            <div class="pref-row">
+              <div><strong>Campaign alerts</strong><p>Notify me when new campaigns launch</p></div>
+              <label class="switch"><input type="checkbox" /><span class="slider"></span></label>
+            </div>
+            <div class="pref-row">
+              <div><strong>Impact photos</strong><p>Send me photo updates of rescued animals</p></div>
+              <label class="switch"><input type="checkbox" checked /><span class="slider"></span></label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- logout modal -->
+  <div class="modal-overlay" id="logoutModal">
+    <div class="modal-box">
+      <div class="modal-paw">&#128062;</div>
+      <h3>Leaving so soon?</h3>
+      <p>Thank you for your kindness today. Your donations make a world of difference.</p>
+      <div class="modal-actions">
+        <button class="btn-ghost" id="logoutCancel">Stay</button>
+        <button class="btn-primary" id="logoutConfirm">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/donor.js"></script>
+</body>
+</html>
