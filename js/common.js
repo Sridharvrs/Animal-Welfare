@@ -177,7 +177,9 @@
       <div class="wrap">
         <div class="ftr-grid">
           <div>
-            <a class="logo" href="index.html"><span class="logo-mark">${icon("paw")}</span>Stackly</a>
+            <a class="logo" href="index.html" aria-label="Stackly — home">
+              <img src="images/logo.webp" alt="Stackly">
+            </a>
             <p style="margin-top:16px;max-width:38ch">A donation portal that turns kindness into rescues, surgeries, meals and forever homes — with every gift traced from your screen to the shelter floor.</p>
             <form class="ftr-news" id="nl-form" novalidate>
               <input type="email" id="nl-email" placeholder="Your email for rescue updates" aria-label="Email address">
