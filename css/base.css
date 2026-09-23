@@ -76,7 +76,7 @@ body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
 .nav a:hover::after,.nav a.active::after{transform:translateX(-50%) scale(1)}
 .nav a.active{color:var(--sun);background:rgba(255,200,87,.14)}
 .hdr-actions{display:flex;align-items:center;gap:10px}
-.toggle{display:none;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);cursor:pointer;place-items:center;padding:0}
+.toggle{display:none;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);cursor:pointer;place-items:center;padding:9px 12px}
 .toggle span{display:block;width:20px;height:2.5px;border-radius:3px;background:#fff;margin:2.5px auto;transition:transform .3s}
 .toggle:hover span:nth-child(2){transform:scaleX(.6)}
 
@@ -239,6 +239,9 @@ textarea.input{resize:vertical;min-height:120px}
 
 /* ---------- footer ---------- */
 .ftr{position:relative;width:min(1280px,calc(100% - 28px));margin:22px auto 16px;border-radius:var(--radius);padding:72px 0 26px;overflow:hidden;color:#fff;background:linear-gradient(150deg,#0E5A66,#0A3D4A)}
+.ftr-grid div{
+  width: 90%;
+}
 .ftr-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:36px}
 .ftr h4{font-family:var(--font-d);font-size:1.15rem;margin-bottom:14px;color:var(--sun)}
 .ftr p,.ftr li{color:rgba(255,255,255,.88);font-size:.96rem}
@@ -296,3 +299,17 @@ textarea.input{resize:vertical;min-height:120px}
   .rv,.rv-l,.rv-r,.rv-z,.rv-s{opacity:1;transform:none}
   .split-t .wi{transform:none}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

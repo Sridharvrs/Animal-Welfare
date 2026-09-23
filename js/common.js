@@ -186,10 +186,10 @@
               <button class="btn btn-sun btn-sm" type="submit">Subscribe</button>
             </form>
             <div class="ftr-soc">
-              <a href="#" aria-label="Instagram">${icon("instagram")}</a>
-              <a href="#" aria-label="Facebook">${icon("facebook")}</a>
-              <a href="#" aria-label="Twitter">${icon("twitter")}</a>
-              <a href="#" aria-label="YouTube">${icon("youtube")}</a>
+              <a href="error.html" aria-label="Instagram">${icon("instagram")}</a>
+              <a href="error.html" aria-label="Facebook">${icon("facebook")}</a>
+              <a href="error.html" aria-label="Twitter">${icon("twitter")}</a>
+              <a href="error.html" aria-label="YouTube">${icon("youtube")}</a>
             </div>
           </div>
           <div>

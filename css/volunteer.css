@@ -199,6 +199,12 @@ body[data-page="volunteer"]{--card:#BFDFFF;--card-ink:#0B1F2A;--card-muted:#1F3B
   .s1{top:90px}.s2{top:270px}
   .tape{font-size:1.1rem}
   .roster-foot{padding:20px}
+  .lanyard{
+    margin-top: 25px;
+  }
+  .sticker,.v-stats{
+    display: none;
+  }
 }
 @media (prefers-reduced-motion:reduce){
   .lanyard{animation:none}
