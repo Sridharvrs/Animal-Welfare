@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PawsHope — Donor Dashboard JS
+   Stackly — Donor Dashboard JS
    Module switching, sidebar toggle, counters, logout, interactions
    ========================================================================== */
 
